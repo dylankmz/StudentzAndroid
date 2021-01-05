@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Studentz</string>
+
+    <string-array name="education">
+        <item>IT</item>
+        <item>Marketing</item>
+        <item>Law</item>
+        <item>Sciences</item>
+        <item>Economy</item>
+    </string-array>
+
+    <string-array name="classroom">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+    </string-array>
+</resources>
