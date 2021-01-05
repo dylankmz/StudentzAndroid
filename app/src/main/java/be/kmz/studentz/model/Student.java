@@ -15,7 +15,7 @@ public class Student implements Serializable {
     private long Id;
     private String firstName;
     private String lastName;
-    private String gender;
+    private String[] gender;
     private LocalDate birthDate;
     private String[] education;
     private String[] classroom;
@@ -27,7 +27,7 @@ public class Student implements Serializable {
     public Student() {
     }
 
-    public Student(long id, String firstName, String lastName, String gender, LocalDate birthDate, String[] education, String[] classroom, String email, String address, String location, String zip) {
+    public Student(long id, String firstName, String lastName, String[] gender, LocalDate birthDate, String[] education, String[] classroom, String email, String address, String location, String zip) {
         Id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -65,11 +65,11 @@ public class Student implements Serializable {
         this.lastName = lastName;
     }
 
-    public String getGender() {
+    public String[] getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(String[] gender) {
         this.gender = gender;
     }
 
@@ -128,5 +128,4 @@ public class Student implements Serializable {
     public void setZip(String zip) {
         this.zip = zip;
     }
-
 }

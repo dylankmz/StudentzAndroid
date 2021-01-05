@@ -1,5 +1,16 @@
 <resources>
     <string name="app_name">Studentz</string>
+    <string name="txt_str_delete">Delete</string>
+    <string name="txt_btn_str_gender">Pick Gender</string>
+    <string name="txt_str_gender">Gender</string>
+    <string name="txt_str_birthdate">Birth Date</string>
+    <string name="str_txt_pick">Pick</string>
+    <string name="str_txt_education">Pick Education</string>
+    <string name="str_txt_classroom">Choose classroom</string>
+    <string name="str_txt_email">Email</string>
+    <string name="str_txt_address">Address</string>
+    <string name="str_txt_location">Location</string>
+    <string name="str_txt_zip">ZIP</string>
 
     <string-array name="education">
         <item>IT</item>
@@ -15,5 +26,10 @@
         <item>C</item>
         <item>D</item>
         <item>E</item>
+    </string-array>
+
+    <string-array name="gender">
+        <item>Male</item>
+        <item>Female</item>
     </string-array>
 </resources>
