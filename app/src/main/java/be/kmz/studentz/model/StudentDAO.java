@@ -20,8 +20,8 @@ public interface StudentDAO {
     void deletePerson(Student s); //if primary key exists in table, delete that row;
 
     @Query("SELECT * FROM Student ORDER BY lastName")
-    LiveData<List<Student>> getAllPersons();
+    LiveData<List<Student>> getAllStudents();
 
     @Query("SELECT * FROM Student WHERE lastName LIKE :name")
-    LiveData<List<Student>> findPersonsByName(String name);
+    LiveData<List<Student>> findStudentsByName(String name);
 }
