@@ -11,13 +11,13 @@ import java.util.List;
 public interface StudentDAO {
 
     @Insert
-    void insertPerson(Student s);
+    void insertStudent(Student s);
 
     @Update
-    void updatePerson(Student s); //if primary key exists in table, update that row
+    void updateStudent(Student s); //if primary key exists in table, update that row
 
     @Delete
-    void deletePerson(Student s); //if primary key exists in table, delete that row;
+    void deleteStudent(Student s); //if primary key exists in table, delete that row;
 
     @Query("SELECT * FROM Student ORDER BY lastName")
     LiveData<List<Student>> getAllStudents();

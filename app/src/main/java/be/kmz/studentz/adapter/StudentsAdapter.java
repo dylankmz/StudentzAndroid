@@ -22,11 +22,13 @@ import java.util.List;
 
 import be.kmz.studentz.R;
 import be.kmz.studentz.model.Student;
+import be.kmz.studentz.model.StudentViewModel;
 
 public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.StudentViewHolder> implements Filterable {
 
     private FragmentActivity activity;
     private List<Student> allStudents;
+    private List<Student> students;
 
     class StudentViewHolder extends RecyclerView.ViewHolder {
         final TextView tvFirstName, tvLastName, tvEducation;
@@ -48,10 +50,10 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.Studen
             @Override
             public void onClick(View v) {
                 int position = getAdapterPosition();
-                Student toBeDeleted = allStudents.get(position);
+                Student toBeDeleted = students.get(position);
 
                 StudentViewModel model = new ViewModelProvider(activity).get(StudentViewModel.class);
-                model.deteteStudent(toBeDeleted);
+                model.deleteStudent(toBeDeleted);
                 notifyDataSetChanged();
             }
         };
@@ -61,7 +63,7 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.Studen
 
             public void onClick(View v) {
                 int position = getAdapterPosition();
-                Student toPass = allStudents.get(position);
+                Student toPass = students.get(position);
 
                 Bundle data = new Bundle();
                 data.putSerializable("passedStudent", toPass);
@@ -73,6 +75,7 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.Studen
 
     public StudentsAdapter(FragmentActivity activity) {
         this.allStudents = new ArrayList<>();
+        this.students = new ArrayList<>();
         this.activity = activity;
     }
 
@@ -86,16 +89,23 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.Studen
 
     @Override
     public void onBindViewHolder(@NonNull StudentViewHolder studentViewHolder, int i) {
-        Student s = allStudents.get(i);
+        Student s = students.get(i);
 
         studentViewHolder.tvFirstName.setText(s.getFirstName());
         studentViewHolder.tvLastName.setText(s.getLastName());
         studentViewHolder.tvEducation.setText(s.getEducation().toString());
     }
 
-    public void addStudents(List<Student> students) {
+    @Override
+    public int getItemCount() {
+        return students.size();
+    }
+
+    public void addStudents(List<Student> student) {
         allStudents.clear();
-        allStudents.addAll(students);
+        allStudents.addAll(student);
+        students.clear();
+        students.addAll(student);
     }
 
     @Override
@@ -104,16 +114,16 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.Studen
             @Override
             protected FilterResults performFiltering(CharSequence charSequence) {
                 String input = charSequence.toString();
-                allStudents = allStudents;
+                students = allStudents;
                 if (!input.isEmpty()) {
                     ArrayList<Student> tempList = new ArrayList<>();
 
-                    for (Student element : allStudents) {
+                    for (Student element : students) {
                         if (element.getLastName().toLowerCase().contains(input.toLowerCase())) {
                             tempList.add(element);
                         }
                     }
-                    allStudents = tempList;
+                    students = tempList;
                 }
                 return null;
             }
