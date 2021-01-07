@@ -23,6 +23,11 @@ public class StudentViewModel extends AndroidViewModel {
         students = db.getStudentDAO().getAllStudents();
     }
 
+    public LiveData<List<Student>> getStudents() {
+        students = db.getStudentDAO().getAllStudents();
+        return students;
+    }
+
     public void insertStudent(Student s){
         StudentDatabase.databaseExecutor.execute(new Runnable() {
             @Override

@@ -68,7 +68,7 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.Studen
                 Bundle data = new Bundle();
                 data.putSerializable("passedStudent", toPass);
 
-                Navigation.findNavController(itemView).navigate(R.id.action_nav_home_to_noteDetailsFragment, data);
+                Navigation.findNavController(itemView).navigate(R.id.action_studentListFragment_to_studentDetailsFragment, data);
             }
         };
     }
@@ -100,6 +100,11 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.Studen
     public int getItemCount() {
         return students.size();
     }
+
+//    @Override
+//    public int getItemCount() {
+//        return students.size();
+//    }
 
     public void addStudents(List<Student> student) {
         allStudents.clear();

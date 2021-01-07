@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_navigation">
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_navigation"
+    app:startDestination="@id/studentListFragment">
 
+    <fragment
+        android:id="@+id/studentListFragment"
+        android:name="be.kmz.studentz.fragment.StudentListFragment"
+        android:label="StudentListFragment" >
+        <action
+            android:id="@+id/action_studentListFragment_to_studentDetailsFragment"
+            app:destination="@id/studentDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentDetailsFragment"
+        android:name="be.kmz.studentz.fragment.StudentDetailsFragment"
+        android:label="StudentDetailsFragment" />
 </navigation>
