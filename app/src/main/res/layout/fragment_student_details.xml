@@ -6,198 +6,170 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <EditText
+        android:id="@+id/txtClassroom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/str_txt_classroom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEducation" />
+
+    <EditText
+        android:id="@+id/txtEducation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/str_txt_education"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBirthDateLayout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtLastNameLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtFistNameLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_lastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/str_lastName" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtFistNameLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_firstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/str_firstName" />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:id="@+id/btn_classroom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="@string/str_txt_pick"
+        app:backgroundTint="@android:color/holo_red_dark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_education" />
 
-    <TextView
-        android:id="@+id/tv_education"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:text="@string/str_txt_education"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/btn_gender"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_birthdate" />
-
-    <TextView
-        android:id="@+id/tv_classroom"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:text="@string/str_txt_classroom"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/btn_gender"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_education" />
-
-    <EditText
-        android:id="@+id/txt_firstname"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="First Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/txt_lastname"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Last Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_firstname" />
-
-    <TextView
-        android:id="@+id/tv_gender"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:text="@string/txt_btn_str_gender"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/btn_gender"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_lastname" />
-
     <Button
-        android:id="@+id/btn_gender"
+        android:id="@+id/btn_education"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="@string/str_txt_pick"
+        app:backgroundTint="@android:color/holo_red_dark"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_lastname" />
+        app:layout_constraintTop_toBottomOf="@+id/txtBirthDateLayout" />
 
     <Button
-        android:id="@+id/btn_education"
+        android:id="@+id/btn_gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="@string/str_txt_pick"
+        app:backgroundTint="@android:color/holo_red_dark"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_birthdate" />
+        app:layout_constraintTop_toBottomOf="@+id/txtLastNameLayout" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_baseline_person_add_alt_1_24"
+        tools:layout_editor_absoluteY="603dp" />
 
     <EditText
-        android:id="@+id/txt_birthdate"
-        android:layout_width="0dp"
+        android:id="@+id/txtGender"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:ems="10"
-        android:inputType="date"
-        android:text="@string/txt_str_birthdate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_gender" />
-
-    <EditText
-        android:id="@+id/txt_email"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:text="@string/str_txt_email"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_classroom" />
-
-    <EditText
-        android:id="@+id/txt_address"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:minLines="@integer/int_line"
-        android:text="@string/str_txt_address"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/txt_str_gender"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_email" />
+        app:layout_constraintTop_toBottomOf="@+id/txtLastNameLayout" />
 
-    <EditText
-        android:id="@+id/txt_location"
-        android:layout_width="0dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtBirthDateLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/str_txt_location"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_address" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_gender">
 
-    <EditText
-        android:id="@+id/txt_zip"
-        android:layout_width="0dp"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_birthDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/txt_str_birthdate" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtEmailLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:ems="10"
-        android:inputType="number"
-        android:text="@string/str_txt_zip"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_location" />
+        app:layout_constraintTop_toBottomOf="@+id/txtClassroom">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/str_txt_email" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

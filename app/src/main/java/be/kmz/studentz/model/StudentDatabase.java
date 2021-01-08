@@ -12,7 +12,7 @@ import java.util.concurrent.Executors;
 
 import be.kmz.studentz.model.util.DateConverters;
 
-@Database(version = 1, entities = {Student.class})
+@Database(version = 1, entities = {Student.class}, exportSchema = false)
 @TypeConverters({DateConverters.class})
 public abstract class StudentDatabase extends RoomDatabase {
 

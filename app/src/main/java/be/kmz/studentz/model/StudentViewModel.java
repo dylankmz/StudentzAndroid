@@ -19,7 +19,6 @@ public class StudentViewModel extends AndroidViewModel {
         super(app);
         myApp = app;
         db = StudentDatabase.getInstance(app);
-
         students = db.getStudentDAO().getAllStudents();
     }
 
@@ -28,7 +27,7 @@ public class StudentViewModel extends AndroidViewModel {
         return students;
     }
 
-    public void insertStudent(Student s){
+    public void insertStudent(Student s) {
         StudentDatabase.databaseExecutor.execute(new Runnable() {
             @Override
             public void run() {

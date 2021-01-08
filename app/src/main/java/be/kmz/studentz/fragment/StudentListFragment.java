@@ -57,13 +57,8 @@ public class StudentListFragment extends Fragment {
         studentsCard = rootView.findViewById(R.id.rv_students);
         studentsCard.setAdapter(studentsAdapter);
 
-        FloatingActionButton faBtn = rootView.findViewById(R.id.fab_add);
-        faBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.action_studentListFragment_to_studentDetailsFragment);
-            }
-        });
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+        studentsCard.setLayoutManager(linearLayoutManager);
 
         StudentViewModel model = new ViewModelProvider(mContext).get(StudentViewModel.class);
         model.getStudents().observe(getViewLifecycleOwner(), new Observer<List<Student>>() {

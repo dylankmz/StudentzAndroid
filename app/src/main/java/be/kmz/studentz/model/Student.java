@@ -29,8 +29,7 @@ public class Student implements Serializable {
     }
 
     @Ignore
-    public Student(long id, String firstName, String lastName, String gender, LocalDate birthDate, String education, String classroom, String email, String address, String location, String zip) {
-        Id = id;
+    public Student(String firstName, String lastName, String gender, LocalDate birthDate, String education, String classroom, String email, String address, String location, String zip) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;

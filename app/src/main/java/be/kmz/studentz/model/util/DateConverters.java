@@ -10,8 +10,6 @@ public class DateConverters {
         return (date == null)?null:date.toString();
     }
 
-    //for backwards compatibility use a library like ThreeTen
-    //https://github.com/JakeWharton/ThreeTenABP
     @TypeConverter
     public static LocalDate toDate (String dateString){
         return (dateString == null)?null:LocalDate.parse(dateString);

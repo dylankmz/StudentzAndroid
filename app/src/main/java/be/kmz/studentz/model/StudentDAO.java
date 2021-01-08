@@ -16,10 +16,10 @@ public interface StudentDAO {
     void insertStudent(Student s);
 
     @Update
-    void updateStudent(Student s); //if primary key exists in table, update that row
+    void updateStudent(Student s);
 
     @Delete
-    void deleteStudent(Student s); //if primary key exists in table, delete that row;
+    void deleteStudent(Student s);
 
     @Query("SELECT * FROM Student ORDER BY lastName")
     LiveData<List<Student>> getAllStudents();

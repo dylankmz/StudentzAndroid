@@ -13,15 +13,19 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.ViewModelProvider;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import be.kmz.studentz.R;
 import be.kmz.studentz.model.Student;
+import be.kmz.studentz.model.StudentViewModel;
 
 public class StudentDetailsFragment extends Fragment {
 
     private EditText edFirstName, edLastName, edBirthDate, edEmail, edAddress, edLocation, edZip;
     private TextView tvGender, tvEducation, tvClassroom;
-    private Button btnGender, btnEducation, btnClassroom;
+    private Button btnGender, btnEducation, btnClassroom, btnAddStudent;
     private Student selectedStudent;
     private FragmentActivity mContext;
 
@@ -29,7 +33,7 @@ public class StudentDetailsFragment extends Fragment {
     }
 
     @NonNull
-    public static  StudentDetailsFragment newInstance() {
+    public static StudentDetailsFragment newInstance() {
         return new StudentDetailsFragment();
     }
 
@@ -44,7 +48,7 @@ public class StudentDetailsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_student_details, container, false);
 
-        selectedStudent = (Student) getArguments().getSerializable("passedStudent");
+        selectedStudent = (getArguments() != null)?(Student) getArguments().getSerializable("passedStudent"):null;
 
         edFirstName = rootView.findViewById(R.id.txt_firstname);
         edLastName = rootView.findViewById(R.id.txt_lastname);
@@ -60,15 +64,13 @@ public class StudentDetailsFragment extends Fragment {
         btnClassroom = rootView.findViewById(R.id.btn_classroom);
         btnEducation = rootView.findViewById(R.id.btn_education);
 
-        if (selectedStudent != null) {
-            edFirstName.setText(selectedStudent.getFirstName());
-            edLastName.setText(selectedStudent.getLastName());
-            edBirthDate.setText(selectedStudent.getBirthDate().toString());
-            edEmail.setText(selectedStudent.getEmail());
-            edAddress.setText(selectedStudent.getAddress());
-            edLocation.setText(selectedStudent.getLocation());
-            edZip.setText(selectedStudent.getZip());
-        }
+
+        FloatingActionButton fab = rootView.findViewById(R.id.fab);
+
+//        private View.OnClickListener addStudent = (v) -> {
+//            if ()
+//        }
+
         return rootView;
     }
 

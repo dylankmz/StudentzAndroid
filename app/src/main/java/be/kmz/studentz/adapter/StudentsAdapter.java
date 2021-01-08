@@ -93,7 +93,7 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.Studen
 
         studentViewHolder.tvFirstName.setText(s.getFirstName());
         studentViewHolder.tvLastName.setText(s.getLastName());
-        studentViewHolder.tvEducation.setText(s.getEducation().toString());
+        studentViewHolder.tvEducation.setText(s.getEducation());
     }
 
     @Override
