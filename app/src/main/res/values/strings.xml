@@ -43,4 +43,7 @@
     <string name="str_bottom_settings">Settings</string>
     <string name="str_firstName">First Name</string>
     <string name="str_lastName">Last Name</string>
+    <string name="str_pick_gender">Choose gender</string>
+    <string name="str_pick_classroom">Pick Classroom</string>
+    <string name="str_pick_education">Pick education</string>
 </resources>
