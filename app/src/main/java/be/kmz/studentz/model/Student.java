@@ -1,6 +1,7 @@
 package be.kmz.studentz.model;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import org.threeten.bp.LocalDate;
@@ -15,10 +16,10 @@ public class Student implements Serializable {
     private long Id;
     private String firstName;
     private String lastName;
-    private String[] gender;
+    private String gender;
     private LocalDate birthDate;
-    private String[] education;
-    private String[] classroom;
+    private String education;
+    private String classroom;
     private String email;
     private String address;
     private String location;
@@ -27,7 +28,8 @@ public class Student implements Serializable {
     public Student() {
     }
 
-    public Student(long id, String firstName, String lastName, String[] gender, LocalDate birthDate, String[] education, String[] classroom, String email, String address, String location, String zip) {
+    @Ignore
+    public Student(long id, String firstName, String lastName, String gender, LocalDate birthDate, String education, String classroom, String email, String address, String location, String zip) {
         Id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -65,11 +67,11 @@ public class Student implements Serializable {
         this.lastName = lastName;
     }
 
-    public String[] getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(String[] gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
@@ -81,19 +83,19 @@ public class Student implements Serializable {
         this.birthDate = birthDate;
     }
 
-    public String[] getEducation() {
+    public String getEducation() {
         return education;
     }
 
-    public void setEducation(String[] education) {
+    public void setEducation(String education) {
         this.education = education;
     }
 
-    public String[] getClassroom() {
+    public String getClassroom() {
         return classroom;
     }
 
-    public void setClassroom(String[] classroom) {
+    public void setClassroom(String classroom) {
         this.classroom = classroom;
     }
 

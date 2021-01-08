@@ -28,6 +28,11 @@ public class StudentDetailsFragment extends Fragment {
     public StudentDetailsFragment() {
     }
 
+    @NonNull
+    public static  StudentDetailsFragment newInstance() {
+        return new StudentDetailsFragment();
+    }
+
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -39,7 +44,7 @@ public class StudentDetailsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_student_details, container, false);
 
-        selectedStudent = (Student) getArguments().getSerializable("Student");
+        selectedStudent = (Student) getArguments().getSerializable("passedStudent");
 
         edFirstName = rootView.findViewById(R.id.txt_firstname);
         edLastName = rootView.findViewById(R.id.txt_lastname);
@@ -48,6 +53,12 @@ public class StudentDetailsFragment extends Fragment {
         edAddress = rootView.findViewById(R.id.txt_address);
         edLocation = rootView.findViewById(R.id.txt_location);
         edZip = rootView.findViewById(R.id.txt_zip);
+        tvGender = rootView.findViewById(R.id.tv_gender);
+        tvEducation = rootView.findViewById(R.id.tv_education);
+        tvClassroom = rootView.findViewById(R.id.tv_classroom);
+        btnGender = rootView.findViewById(R.id.btn_gender);
+        btnClassroom = rootView.findViewById(R.id.btn_classroom);
+        btnEducation = rootView.findViewById(R.id.btn_education);
 
         if (selectedStudent != null) {
             edFirstName.setText(selectedStudent.getFirstName());
@@ -58,6 +69,8 @@ public class StudentDetailsFragment extends Fragment {
             edLocation.setText(selectedStudent.getLocation());
             edZip.setText(selectedStudent.getZip());
         }
-
+        return rootView;
     }
+
+
 }

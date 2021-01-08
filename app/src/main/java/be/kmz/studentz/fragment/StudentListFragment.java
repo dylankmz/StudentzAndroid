@@ -16,6 +16,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -39,13 +40,21 @@ public class StudentListFragment extends Fragment {
         mContext = (FragmentActivity) context;
     }
 
+    public StudentListFragment() {
+    }
+
+    @NonNull
+    public static StudentListFragment newInstance() {
+        return new StudentListFragment();
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_students, container, false);
 
         studentsAdapter = new StudentsAdapter(getActivity());
-        studentsCard = rootView.findViewById(R.id.student_card);
+        studentsCard = rootView.findViewById(R.id.rv_students);
         studentsCard.setAdapter(studentsAdapter);
 
         FloatingActionButton faBtn = rootView.findViewById(R.id.fab_add);

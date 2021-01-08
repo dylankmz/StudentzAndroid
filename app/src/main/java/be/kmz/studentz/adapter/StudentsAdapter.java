@@ -41,9 +41,9 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.Studen
             tvLastName = itemView.findViewById(R.id.lastname_tv);
             tvEducation = itemView.findViewById(R.id.education_tv);
             btnDelete = itemView.findViewById(R.id.btn_delete);
-            //deleteListener
+            btnDelete.setOnClickListener(deleteListener);
             card = itemView.findViewById(R.id.student_card);
-            //card details listener
+            card.setOnClickListener(detailsListener);
         }
 
         private View.OnClickListener deleteListener = new View.OnClickListener() {
@@ -101,10 +101,6 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.Studen
         return students.size();
     }
 
-//    @Override
-//    public int getItemCount() {
-//        return students.size();
-//    }
 
     public void addStudents(List<Student> student) {
         allStudents.clear();
