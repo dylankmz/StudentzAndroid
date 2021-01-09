@@ -15,4 +15,8 @@
         android:id="@+id/studentDetailsFragment"
         android:name="be.kmz.studentz.fragment.StudentDetailsFragment"
         android:label="StudentDetailsFragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="be.kmz.studentz.fragment.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>

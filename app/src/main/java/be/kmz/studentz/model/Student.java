@@ -17,7 +17,7 @@ public class Student implements Serializable {
     private String firstName;
     private String lastName;
     private String gender;
-    private LocalDate birthDate;
+    private String birthDate;
     private String education;
     private String classroom;
     private String email;
@@ -29,7 +29,7 @@ public class Student implements Serializable {
     }
 
     @Ignore
-    public Student(String firstName, String lastName, String gender, LocalDate birthDate, String education, String classroom, String email, String address, String location, String zip) {
+    public Student(String firstName, String lastName, String gender, String birthDate, String education, String classroom, String email, String address, String location, String zip) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
@@ -74,11 +74,11 @@ public class Student implements Serializable {
         this.gender = gender;
     }
 
-    public LocalDate getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
 

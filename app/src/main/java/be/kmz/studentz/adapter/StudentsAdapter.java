@@ -67,7 +67,6 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.Studen
 
                 Bundle data = new Bundle();
                 data.putSerializable("passedStudent", toPass);
-
                 Navigation.findNavController(itemView).navigate(R.id.action_studentListFragment_to_studentDetailsFragment, data);
             }
         };
