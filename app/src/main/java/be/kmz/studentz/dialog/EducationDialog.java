@@ -32,7 +32,7 @@ public class EducationDialog extends DialogFragment {
         public void onClick(DialogInterface dialog, int which) {
             String education = getResources().getStringArray(R.array.education)[selectedIndex];
             StudentViewModel model = new ViewModelProvider(mContext).get(StudentViewModel.class);
-            model.pickGender(education);
+            model.pickEducation(education);
         }
     };
 

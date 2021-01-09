@@ -46,4 +46,5 @@
     <string name="str_pick_gender">Choose gender</string>
     <string name="str_pick_classroom">Pick Classroom</string>
     <string name="str_pick_education">Pick education</string>
+    <string name="str_txt_intro">Welcome to Studentz!</string>
 </resources>

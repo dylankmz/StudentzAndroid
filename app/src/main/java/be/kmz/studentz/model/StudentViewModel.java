@@ -37,14 +37,17 @@ public class StudentViewModel extends AndroidViewModel {
 
     public void pickGender(String gender) {
         student.setGender(gender);
+        sharedStudent.setValue(student);
     }
 
     public void pickEducation(String education) {
         student.setEducation(education);
+        sharedStudent.setValue(student);
     }
 
     public void pickClassroom(String classroom) {
         student.setClassroom(classroom);
+        sharedStudent.setValue(student);
     }
 
     public LiveData<List<Student>> getStudents() {
