@@ -16,6 +16,7 @@ public class StudentViewModel extends AndroidViewModel {
     private final Application myApp;
     private MutableLiveData<Student> sharedStudent;
 
+
     public StudentViewModel(Application app) {
         super(app);
         myApp = app;

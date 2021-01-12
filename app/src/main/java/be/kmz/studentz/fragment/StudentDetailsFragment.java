@@ -97,9 +97,13 @@ public class StudentDetailsFragment extends Fragment {
         model.getSharedStudent().observe(getViewLifecycleOwner(), new Observer<Student>() {
                     @Override
                     public void onChanged(Student student) {
-                        tvGender.setText(selectedStudent.getGender());
-                        tvEducation.setText(selectedStudent.getEducation());
-                        tvClassroom.setText(selectedStudent.getClassroom());
+                        //als ik deze verificatie niet uitvoer zet hij de waarde van gender, education en classroom
+                        //op de default waarde van sharedStudent
+                        if (selectedStudent == null){
+                            tvGender.setText(student.getGender());
+                            tvEducation.setText(student.getEducation());
+                            tvClassroom.setText(student.getClassroom());
+                        }
                     }
                 });
 
