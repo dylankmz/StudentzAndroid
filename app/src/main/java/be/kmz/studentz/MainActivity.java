@@ -1,6 +1,8 @@
 package be.kmz.studentz;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.PopupMenu;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -8,6 +10,10 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.jakewharton.threetenabp.AndroidThreeTen;
@@ -40,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //ref: https://www.geeksforgeeks.org/bottomnavigationview-inandroid/
     @SuppressLint("NonConstantResourceId")
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             item -> {
@@ -63,4 +70,5 @@ public class MainActivity extends AppCompatActivity {
                         selectedFragment, null).setCustomAnimations(R.anim.fragment_fade_enter, R.anim.fragment_fade_exit).commit();
                 return true;
             };
+
 }

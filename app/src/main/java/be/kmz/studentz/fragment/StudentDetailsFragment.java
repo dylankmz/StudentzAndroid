@@ -7,10 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
@@ -24,6 +26,7 @@ import be.kmz.studentz.R;
 import be.kmz.studentz.dialog.ClassroomDialog;
 import be.kmz.studentz.dialog.EducationDialog;
 import be.kmz.studentz.dialog.GenderDialog;
+import be.kmz.studentz.dialog.InfoDialog;
 import be.kmz.studentz.model.Student;
 import be.kmz.studentz.model.StudentViewModel;
 
@@ -33,6 +36,7 @@ public class StudentDetailsFragment extends Fragment {
     private TextView tvGender, tvEducation, tvClassroom;
     private TextInputLayout firstNameLayout, lastNameLayout, birthDateLayout, emailLayout, addressLayout, locationLayout, zipLayout;
     private Button btnGender, btnEducation, btnClassroom;
+    private ImageButton btnInfo;
     private Student selectedStudent;
     private FragmentActivity mContext;
 
@@ -85,6 +89,9 @@ public class StudentDetailsFragment extends Fragment {
         btnEducation = rootView.findViewById(R.id.btn_education);
         btnEducation.setOnClickListener(openEducationDialogListener);
 
+        btnInfo = rootView.findViewById(R.id.btn_info);
+        btnInfo.setOnClickListener(infoListener);
+
         firstNameLayout = rootView.findViewById(R.id.txtFistNameLayout);
         lastNameLayout = rootView.findViewById(R.id.txtLastNameLayout);
         birthDateLayout = rootView.findViewById(R.id.txtBirthDateLayout);
@@ -98,7 +105,7 @@ public class StudentDetailsFragment extends Fragment {
                     @Override
                     public void onChanged(Student student) {
                         //als ik deze verificatie niet uitvoer zet hij de waarde van gender, education en classroom
-                        //op de default waarde van sharedStudent
+                        //op de default waarde van sharedStudent altijd
                         if (selectedStudent == null){
                             tvGender.setText(student.getGender());
                             tvEducation.setText(student.getEducation());
@@ -180,4 +187,13 @@ public class StudentDetailsFragment extends Fragment {
             classroomDialog.show(getParentFragmentManager(), "cd");
         }
     };
+
+    private View.OnClickListener infoListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            new InfoDialog().show(getParentFragmentManager(), "infolst");
+        }
+    };
+
+
 }
