@@ -97,9 +97,9 @@ public class StudentDetailsFragment extends Fragment {
         model.getSharedStudent().observe(getViewLifecycleOwner(), new Observer<Student>() {
                     @Override
                     public void onChanged(Student student) {
-                        tvGender.setText(student.getGender());
-                        tvEducation.setText(student.getEducation());
-                        tvClassroom.setText(student.getClassroom());
+                        tvGender.setText(selectedStudent.getGender());
+                        tvEducation.setText(selectedStudent.getEducation());
+                        tvClassroom.setText(selectedStudent.getClassroom());
                     }
                 });
 
@@ -146,7 +146,6 @@ public class StudentDetailsFragment extends Fragment {
                     selectedStudent.setZip(edZip.getText().toString());
                     model.updateStudent(selectedStudent);
                 }
-//                Navigation.findNavController(getView()).navigateUp();
                 mContext.getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, StudentListFragment.newInstance()).commit();
             }
         });

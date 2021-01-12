@@ -32,7 +32,7 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.Studen
     private List<Student> students;
 
     class StudentViewHolder extends RecyclerView.ViewHolder {
-        final TextView tvFirstName, tvLastName, tvEducation;
+        final TextView tvFirstName, tvLastName, tvEducation, tvClassroom;
         final Button btnDelete;
         final CardView card;
 
@@ -41,6 +41,7 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.Studen
             tvFirstName = itemView.findViewById(R.id.firstname_tv);
             tvLastName = itemView.findViewById(R.id.lastname_tv);
             tvEducation = itemView.findViewById(R.id.education_tv);
+            tvClassroom = itemView.findViewById(R.id.classroom_tv);
             btnDelete = itemView.findViewById(R.id.btn_delete);
             btnDelete.setOnClickListener(deleteListener);
             card = itemView.findViewById(R.id.student_card);
@@ -93,6 +94,7 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.Studen
         studentViewHolder.tvFirstName.setText(s.getFirstName());
         studentViewHolder.tvLastName.setText(s.getLastName());
         studentViewHolder.tvEducation.setText(s.getEducation());
+        studentViewHolder.tvClassroom.setText(s.getClassroom());
     }
 
     @Override

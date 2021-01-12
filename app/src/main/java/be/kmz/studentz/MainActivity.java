@@ -12,6 +12,7 @@ import android.os.Bundle;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.jakewharton.threetenabp.AndroidThreeTen;
 
+import be.kmz.studentz.fragment.ContactFragment;
 import be.kmz.studentz.fragment.SettingsFragment;
 import be.kmz.studentz.fragment.StudentDetailsFragment;
 import be.kmz.studentz.fragment.StudentListFragment;
@@ -50,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.nav_student:
                         selectedFragment = new StudentDetailsFragment();
+                        break;
+                    case R.id.nav_contact:
+                        selectedFragment = new ContactFragment();
                         break;
                     case R.id.nav_settings:
                         selectedFragment = new SettingsFragment();
