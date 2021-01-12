@@ -1,7 +1,6 @@
 package be.kmz.studentz.fragment;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,16 +20,11 @@ import androidx.navigation.Navigation;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputLayout;
 
-import org.threeten.bp.LocalDate;
-
-import java.util.List;
-
 import be.kmz.studentz.R;
 import be.kmz.studentz.dialog.ClassroomDialog;
 import be.kmz.studentz.dialog.EducationDialog;
 import be.kmz.studentz.dialog.GenderDialog;
 import be.kmz.studentz.model.Student;
-import be.kmz.studentz.model.StudentDatabase;
 import be.kmz.studentz.model.StudentViewModel;
 
 public class StudentDetailsFragment extends Fragment {
@@ -48,6 +42,12 @@ public class StudentDetailsFragment extends Fragment {
     @NonNull
     public static StudentDetailsFragment newInstance() {
         return new StudentDetailsFragment();
+    }
+
+    public static Fragment newInstance(Bundle data) {
+        StudentDetailsFragment studentDetailsFragment = new StudentDetailsFragment();
+        studentDetailsFragment.setArguments(data);
+        return studentDetailsFragment;
     }
 
     @Override
@@ -69,7 +69,7 @@ public class StudentDetailsFragment extends Fragment {
         edBirthDate = rootView.findViewById(R.id.txtBirthDate);
         edEmail = rootView.findViewById(R.id.txtEmail);
         edAddress = rootView.findViewById(R.id.txtAddress);
-        edLocation = rootView.findViewById(R.id.txt);
+        edLocation = rootView.findViewById(R.id.txtLocation);
         edZip = rootView.findViewById(R.id.txtZip);
 
         tvGender = rootView.findViewById(R.id.txtGender);
@@ -146,7 +146,8 @@ public class StudentDetailsFragment extends Fragment {
                     selectedStudent.setZip(edZip.getText().toString());
                     model.updateStudent(selectedStudent);
                 }
-                Navigation.findNavController(getView()).navigateUp();
+//                Navigation.findNavController(getView()).navigateUp();
+                mContext.getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, StudentListFragment.newInstance()).commit();
             }
         });
 

@@ -9,11 +9,7 @@
         android:id="@+id/studentListFragment"
         android:name="be.kmz.studentz.fragment.StudentListFragment"
         android:label="StudentListFragment"
-        tools:layout="@layout/fragment_students" >
-        <action
-            android:id="@+id/action_studentListFragment_to_studentDetailsFragment"
-            app:destination="@id/studentDetailsFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_students" />
     <fragment
         android:id="@+id/studentDetailsFragment"
         android:name="be.kmz.studentz.fragment.StudentDetailsFragment"

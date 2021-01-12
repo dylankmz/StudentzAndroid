@@ -60,9 +60,6 @@ public class StudentListFragment extends Fragment {
         RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
         studentsCard.setLayoutManager(manager);
 
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
-//        studentsCard.setLayoutManager(linearLayoutManager);
-
         StudentViewModel model = new ViewModelProvider(mContext).get(StudentViewModel.class);
         model.getStudents().observe(getViewLifecycleOwner(), new Observer<List<Student>>() {
             @Override

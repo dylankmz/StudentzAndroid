@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import be.kmz.studentz.R;
+import be.kmz.studentz.fragment.StudentDetailsFragment;
 import be.kmz.studentz.model.Student;
 import be.kmz.studentz.model.StudentViewModel;
 
@@ -67,7 +68,7 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.Studen
 
                 Bundle data = new Bundle();
                 data.putSerializable("passedStudent", toPass);
-                Navigation.findNavController(itemView).navigate(R.id.action_studentListFragment_to_studentDetailsFragment, data);
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, StudentDetailsFragment.newInstance(data)).commit();
             }
         };
     }
