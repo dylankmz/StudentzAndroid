@@ -89,7 +89,6 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.Studen
     @Override
     public void onBindViewHolder(@NonNull StudentViewHolder studentViewHolder, int i) {
         Student s = students.get(i);
-
         studentViewHolder.tvFirstName.setText(s.getFirstName());
         studentViewHolder.tvLastName.setText(s.getLastName());
         studentViewHolder.tvEducation.setText(s.getEducation());

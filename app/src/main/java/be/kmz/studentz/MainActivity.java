@@ -1,14 +1,13 @@
 package be.kmz.studentz;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.NavigationUI;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
+
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.jakewharton.threetenabp.AndroidThreeTen;
@@ -23,40 +22,41 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(
                 navListener
         );
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,
-                new StudentListFragment()).commit();
+        //ref: https://developer.android.com/guide/fragments/transactions
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.setReorderingAllowed(true);
+        transaction.replace(R.id.nav_host_fragment, StudentListFragment.class, null).setCustomAnimations(R.anim.fragment_fade_enter, R.anim.fragment_fade_exit);
+        transaction.commit();
 
         AndroidThreeTen.init(this);
 
     }
 
+    @SuppressLint("NonConstantResourceId")
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
-            new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    Fragment selectedFragment = null;
+            item -> {
+                Fragment selectedFragment = null;
 
-                    switch (item.getItemId()) {
-                        case R.id.nav_home:
-                            selectedFragment = new StudentListFragment();
-                            break;
-                        case R.id.nav_student:
-                            selectedFragment = new StudentDetailsFragment();
-                            break;
-                        case R.id.nav_settings:
-                            selectedFragment = new SettingsFragment();
-                            break;
-                    }
-                    getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,
-                            selectedFragment).commit();
-
-                    return true;
+                switch (item.getItemId()) {
+                    case R.id.nav_home:
+                        selectedFragment = new StudentListFragment();
+                        break;
+                    case R.id.nav_student:
+                        selectedFragment = new StudentDetailsFragment();
+                        break;
+                    case R.id.nav_settings:
+                        selectedFragment = new SettingsFragment();
+                        break;
                 }
+                getSupportFragmentManager().beginTransaction().setReorderingAllowed(true).replace(R.id.nav_host_fragment,
+                        selectedFragment, null).setCustomAnimations(R.anim.fragment_fade_enter, R.anim.fragment_fade_exit).commit();
+                return true;
             };
 }

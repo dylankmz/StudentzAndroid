@@ -106,14 +106,14 @@ public class StudentDetailsFragment extends Fragment {
         if (selectedStudent != null) {
             edFirstName.setText(selectedStudent.getFirstName());
             edLastName.setText(selectedStudent.getLastName());
-            edBirthDate.setText(selectedStudent.getBirthDate().toString());
+            tvGender.setText(selectedStudent.getGender());
+            edBirthDate.setText(selectedStudent.getBirthDate());
+            tvEducation.setText(selectedStudent.getEducation());
+            tvClassroom.setText(selectedStudent.getClassroom());
             edEmail.setText(selectedStudent.getEmail());
             edAddress.setText(selectedStudent.getAddress());
             edLocation.setText(selectedStudent.getLocation());
             edZip.setText(selectedStudent.getZip());
-            tvGender.setText(selectedStudent.getGender());
-            tvEducation.setText(selectedStudent.getEducation());
-            tvClassroom.setText(selectedStudent.getClassroom());
         }
 
         FloatingActionButton fab = rootView.findViewById(R.id.fab);
@@ -176,5 +176,4 @@ public class StudentDetailsFragment extends Fragment {
             classroomDialog.show(getParentFragmentManager(), "cd");
         }
     };
-
 }

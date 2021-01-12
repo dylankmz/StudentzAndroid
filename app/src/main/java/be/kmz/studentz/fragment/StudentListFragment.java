@@ -57,8 +57,11 @@ public class StudentListFragment extends Fragment {
         studentsCard = rootView.findViewById(R.id.rv_students);
         studentsCard.setAdapter(studentsAdapter);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
-        studentsCard.setLayoutManager(linearLayoutManager);
+        RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
+        studentsCard.setLayoutManager(manager);
+
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+//        studentsCard.setLayoutManager(linearLayoutManager);
 
         StudentViewModel model = new ViewModelProvider(mContext).get(StudentViewModel.class);
         model.getStudents().observe(getViewLifecycleOwner(), new Observer<List<Student>>() {
