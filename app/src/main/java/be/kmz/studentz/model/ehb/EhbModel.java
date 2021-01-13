@@ -24,7 +24,7 @@ public class EhbModel extends AndroidViewModel {
             ArrayList<Ehb> ehbSchools = new ArrayList<>();
             ehbSchools.add(new Ehb(new LatLng(50.84765158611861, 4.344008196195696),
                     "Ehb Bloemenhof",
-                    "Campus Bloemenhif"));
+                    "Campus Bloemenhof"));
             ehbSchools.add((new Ehb(new LatLng(50.842266078753354, 4.322805316393921),
                     "Ehb Kaai",
                     "Ehb Campus Kaai")));

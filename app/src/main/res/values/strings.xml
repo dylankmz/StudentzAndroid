@@ -53,4 +53,8 @@
     <string name="str_txt_title_students">Students</string>
     <string name="str_txt_titleAddStudent">Add Student</string>
     <string name="str_txt_titlecontact">Contact</string>
+    <string name="str_txt_contact_us">Contact us</string>
+    <string name="str_url_ehb">https://www.erasmushogeschool.be/en/contact</string>
+    <string name="str_txt_ehbphone">Phone number</string>
+    <string name="str_txt_kaaiehbphone">02 523 37 37</string>
 </resources>
