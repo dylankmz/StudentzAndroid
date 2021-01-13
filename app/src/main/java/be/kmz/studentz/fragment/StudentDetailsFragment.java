@@ -33,7 +33,7 @@ import be.kmz.studentz.model.StudentViewModel;
 public class StudentDetailsFragment extends Fragment {
 
     private EditText edFirstName, edLastName, edBirthDate, edEmail, edAddress, edLocation, edZip;
-    private TextView tvGender, tvEducation, tvClassroom;
+    private TextView tvGender, tvEducation, tvClassroom, tvAddStudentTitle;
     private TextInputLayout firstNameLayout, lastNameLayout, birthDateLayout, emailLayout, addressLayout, locationLayout, zipLayout;
     private Button btnGender, btnEducation, btnClassroom;
     private ImageButton btnInfo;
@@ -79,6 +79,7 @@ public class StudentDetailsFragment extends Fragment {
         tvGender = rootView.findViewById(R.id.txtGender);
         tvEducation = rootView.findViewById(R.id.txtEducation);
         tvClassroom = rootView.findViewById(R.id.txtClassroom);
+        tvAddStudentTitle = rootView.findViewById(R.id.titleAddStudent);
 
         btnGender = rootView.findViewById(R.id.btn_gender);
         btnGender.setOnClickListener(openGenderDialogListener);

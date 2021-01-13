@@ -33,6 +33,7 @@ public class StudentListFragment extends Fragment {
     private RecyclerView studentsCard;
     private StudentsAdapter studentsAdapter;
     private FragmentActivity mContext;
+    private TextView titleStudent;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -56,6 +57,7 @@ public class StudentListFragment extends Fragment {
         studentsAdapter = new StudentsAdapter(getActivity());
         studentsCard = rootView.findViewById(R.id.rv_students);
         studentsCard.setAdapter(studentsAdapter);
+        titleStudent = rootView.findViewById(R.id.titleStudent);
 
         RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
         studentsCard.setLayoutManager(manager);

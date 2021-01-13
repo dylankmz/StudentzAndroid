@@ -50,4 +50,7 @@
     <string name="str_txt_contact">Contact</string>
     <string name="str_txt_info" />
     <string name="str_txt_warning">Important message!</string>
+    <string name="str_txt_title_students">Students</string>
+    <string name="str_txt_titleAddStudent">Add Student</string>
+    <string name="str_txt_titlecontact">Contact</string>
 </resources>
