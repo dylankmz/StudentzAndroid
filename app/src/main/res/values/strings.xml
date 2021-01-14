@@ -38,6 +38,10 @@
     <string name="str_validation_location">Please insert a valid location!</string>
     <string name="str_validation_zip">Please insert a valid belgian zip!</string>
 
+    <string name="toast_student_added">Student added!</string>
+    <string name="toast_student_updated">Student updated!</string>
+    <string name="toast_student_deleted">Student deleted!</string>
+
 
     <string-array name="education">
         <item>@string/str_it</item>

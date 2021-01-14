@@ -45,4 +45,7 @@
     <string name="str_validation_address">Gelieve een geldige adres en huisnummer in te geven!</string>
     <string name="str_validation_location">Gelieve een geldige gemeente in te geven!</string>
     <string name="str_validation_zip">Gelieve een geldige belgische postcode in te geven!</string>
+    <string name="toast_student_added">Student toegevoegd!</string>
+    <string name="toast_student_updated">Student gewijzigd!</string>
+    <string name="toast_student_deleted">Student verwijderd!</string>
 </resources>

@@ -150,7 +150,7 @@ public class StudentDetailsFragment extends Fragment {
                             edAddress.getText().toString(),
                             edLocation.getText().toString(),
                             edZip.getText().toString());
-                    Toast.makeText(mContext, "Student added!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(mContext, R.string.toast_student_added, Toast.LENGTH_LONG).show();
                     model.insertStudent(s);
                     mContext.getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, StudentListFragment.newInstance()).commit();
                 } else if (checkFirstName() && checkLastName() && checkBirthDate()
@@ -166,6 +166,7 @@ public class StudentDetailsFragment extends Fragment {
                     selectedStudent.setLocation(edLocation.getText().toString());
                     selectedStudent.setZip(edZip.getText().toString());
                     model.updateStudent(selectedStudent);
+                    Toast.makeText(mContext, R.string.toast_student_updated, Toast.LENGTH_LONG).show();
                     mContext.getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, StudentListFragment.newInstance()).commit();
                 }
             }

@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SearchView;
@@ -28,7 +29,7 @@ import be.kmz.studentz.fragment.StudentDetailsFragment;
 import be.kmz.studentz.model.Student;
 import be.kmz.studentz.model.StudentViewModel;
 
-public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.StudentViewHolder> implements Filterable {
+public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.StudentViewHolder> /*implements Filterable*/ {
 
     private FragmentActivity activity;
     private List<Student> allStudents;
@@ -56,9 +57,9 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.Studen
             public void onClick(View v) {
                 int position = getAdapterPosition();
                 Student toBeDeleted = students.get(position);
-
                 StudentViewModel model = new ViewModelProvider(activity).get(StudentViewModel.class);
                 model.deleteStudent(toBeDeleted);
+                Toast.makeText(activity, R.string.toast_student_deleted, Toast.LENGTH_LONG).show();
                 notifyDataSetChanged();
             }
         };
@@ -113,31 +114,31 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.Studen
         students.addAll(student);
     }
 
-    @Override
-    public Filter getFilter() {
-        return new Filter() {
-            @Override
-            protected FilterResults performFiltering(CharSequence charSequence) {
-                String input = charSequence.toString();
-                students = allStudents;
-                if (!input.isEmpty()) {
-                    ArrayList<Student> tempList = new ArrayList<>();
-
-                    for (Student element : students) {
-                        if (element.getLastName().toLowerCase().contains(input.toLowerCase())) {
-                            tempList.add(element);
-                        }
-                    }
-                    students = tempList;
-                }
-                return null;
-            }
-
-            @Override
-            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-                notifyDataSetChanged();
-            }
-        };
-    }
+//    @Override
+//    public Filter getFilter() {
+//        return new Filter() {
+//            @Override
+//            protected FilterResults performFiltering(CharSequence charSequence) {
+//                String input = charSequence.toString();
+//                students = allStudents;
+//                if (!input.isEmpty()) {
+//                    ArrayList<Student> tempList = new ArrayList<>();
+//
+//                    for (Student element : students) {
+//                        if (element.getLastName().toLowerCase().contains(input.toLowerCase())) {
+//                            tempList.add(element);
+//                        }
+//                    }
+//                    students = tempList;
+//                }
+//                return null;
+//            }
+//
+//            @Override
+//            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+//                notifyDataSetChanged();
+//            }
+//        };
+//    }
 }
 
