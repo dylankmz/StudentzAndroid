@@ -12,12 +12,28 @@
     <string name="str_txt_location">Location</string>
     <string name="str_txt_zip">ZIP</string>
 
+    <string name="str_it">IT</string>
+    <string name="str_marketing">Marketing</string>
+    <string name="str_law">Law</string>
+    <string name="str_sciences">Sciences</string>
+    <string name="str_economy">Economy</string>
+
+    <string name="str_male">Male</string>
+    <string name="str_female">Female</string>
+
+    <string name="str_info_title">Warning: certain values cannot be changed!</string>
+    <string name="str_info_body">You cannot change the gender, education and classroom of a student after registering the student," +
+                " to do this please remove the student and create a new student!</string>
+
+
+
+
     <string-array name="education">
-        <item>IT</item>
-        <item>Marketing</item>
-        <item>Law</item>
-        <item>Sciences</item>
-        <item>Economy</item>
+        <item>@string/str_it</item>
+        <item>@string/str_marketing</item>
+        <item>@string/str_law</item>
+        <item>@string/str_sciences</item>
+        <item>@string/str_economy</item>
     </string-array>
 
     <string-array name="classroom">
@@ -29,16 +45,16 @@
     </string-array>
 
     <string-array name="gender">
-        <item>Male</item>
-        <item>Female</item>
+        <item>@string/str_male</item>
+        <item>@string/str_female</item>
     </string-array>
 
-    <string name="title_shop">Shop</string>
-    <string name="title_gifts">Gifts</string>
-    <string name="title_cart">Cart</string>
-    <string name="title_profile">Profile</string>
+<!--    <string name="title_shop">Shop</string>-->
+<!--    <string name="title_gifts">Gifts</string>-->
+<!--    <string name="title_cart">Cart</string>-->
+<!--    <string name="title_profile">Profile</string>-->
     <string name="str_btn_add">Add</string>
-    <string name="str_bottom_home">Home</string>
+    <string name="str_bottom_students">Students</string>
     <string name="str_bottom_addstudent">Add Student</string>
     <string name="str_bottom_settings">Settings</string>
     <string name="str_firstName">First Name</string>
@@ -48,7 +64,7 @@
     <string name="str_pick_education">Pick education</string>
     <string name="str_txt_intro">Welcome to Studentz!</string>
     <string name="str_txt_contact">Contact</string>
-    <string name="str_txt_info" />
+<!--    <string name="str_txt_info" />-->
     <string name="str_txt_warning">Important message!</string>
     <string name="str_txt_title_students">Students</string>
     <string name="str_txt_titleAddStudent">Add Student</string>
@@ -56,5 +72,5 @@
     <string name="str_txt_contact_us">Contact us</string>
     <string name="str_url_ehb">https://www.erasmushogeschool.be/en/contact</string>
     <string name="str_txt_ehbphone">Phone number</string>
-    <string name="str_txt_kaaiehbphone">02 523 37 37</string>
+    <string name="str_txt_kaaiehbphone" translatable="false">02 523 37 37</string>
 </resources>

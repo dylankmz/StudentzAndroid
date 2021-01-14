@@ -8,6 +8,8 @@ import androidx.lifecycle.MutableLiveData;
 
 import java.util.List;
 
+import be.kmz.studentz.R;
+
 public class StudentViewModel extends AndroidViewModel {
 
     public LiveData<List<Student>> students;
@@ -27,8 +29,9 @@ public class StudentViewModel extends AndroidViewModel {
     public MutableLiveData<Student> getSharedStudent() {
         if (sharedStudent == null) {
             student = new Student();
-            student.setGender("Male");
-            student.setEducation("IT");
+            //ref: https://11zon.com/android/android_resource_values.php
+            student.setGender(getApplication().getResources().getString(R.string.str_male));
+            student.setEducation(getApplication().getResources().getString(R.string.str_it));
             student.setClassroom("A");
             sharedStudent = new MutableLiveData<>();
             sharedStudent.setValue(student);

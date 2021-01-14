@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Studentz</string>
+    <string name="txt_str_delete">Verwijder</string>
+    <string name="txt_btn_str_gender">Kies geslacht</string>
+    <string name="txt_str_gender">Geslacht</string>
+    <string name="txt_str_birthdate">Geboortedatum (formaat: dd/MM/yyyy)</string>
+    <string name="str_txt_pick">Kies</string>
+    <string name="str_txt_education">Kies studierichting</string>
+    <string name="str_txt_classroom">Kies klaslokaal</string>
+    <string name="str_txt_email">Email</string>
+    <string name="str_txt_address">Adres &amp; Huisnummer</string>
+    <string name="str_txt_location">Gemeente</string>
+    <string name="str_txt_zip">Postcode</string>
+    <string name="str_btn_add">Voeg toe</string>
+    <string name="str_bottom_students">Studenten</string>
+    <string name="str_bottom_settings">Instellingen</string>
+    <string name="str_firstName">Voornaam</string>
+    <string name="str_lastName">Achternaam</string>
+    <string name="str_pick_gender">Kies geslacht</string>
+    <string name="str_pick_classroom">Kies klaslokaal</string>
+    <string name="str_pick_education">Kies studierichting</string>
+    <string name="str_txt_intro">Welkom bij Studentz!</string>
+    <string name="str_txt_contact">Contact</string>
+    <string name="str_txt_warning">Belangrijke mededeling!</string>
+    <string name="str_txt_title_students">Studenten</string>
+    <string name="str_txt_titleAddStudent">Voeg student toe</string>
+    <string name="str_txt_titlecontact">Contact</string>
+    <string name="str_txt_contact_us">Contacteer ons</string>
+    <string name="str_bottom_addstudent">Voeg student toe</string>
+    <string name="str_url_ehb">https://www.erasmushogeschool.be/nl/contact</string>
+    <string name="str_txt_ehbphone">GSM nummer</string>
+    <string name="str_it">Informatica</string>
+    <string name="str_marketing">Marketing</string>
+    <string name="str_law">Rechten</string>
+    <string name="str_sciences">Wetenschappen</string>
+    <string name="str_economy">Economie</string>
+    <string name="str_male">Mannelijk</string>
+    <string name="str_female">Vrouwelijk</string>
+    <string name="str_info_title">Opgepast: sommige waarden kunnen niet gewijzigd worden!</string>
+    <string name="str_info_body">"Je kan niet het geslacht, studierichting en klaslokaal van een student wijzigen na registratie, om dit te kunnen te doen gelieve de student te verwijderen en opnieuw te registreren! "</string>
+</resources>

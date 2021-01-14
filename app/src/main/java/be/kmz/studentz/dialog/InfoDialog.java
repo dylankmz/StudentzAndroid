@@ -17,9 +17,8 @@ public class InfoDialog extends DialogFragment {
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Warning: certain values cannot be changed!");
-        builder.setMessage("You cannot change the gender, education and classroom of a student after registering the student," +
-                " to do this please remove the student and create a new student!");
+        builder.setTitle(R.string.str_info_title);
+        builder.setMessage(R.string.str_info_body);
         builder.setPositiveButton(android.R.string.ok, null);
         return builder.create();
     }
