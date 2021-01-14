@@ -208,7 +208,7 @@ public class StudentDetailsFragment extends Fragment {
     //ref voor regex: stackoverflow & https://regexlib.com/Search.aspx?k=street&AspxAutoDetectCookieSupport=1
     private boolean checkFirstName() {
         if (!edFirstName.getText().toString().matches("[A-Z][a-z]*")) {
-            firstNameLayout.setError("Please insert a valid first name!");
+            firstNameLayout.setError(getActivity().getResources().getString(R.string.str_validation_firstname));
             return false;
         } else {
             firstNameLayout.setError(null);
@@ -218,7 +218,7 @@ public class StudentDetailsFragment extends Fragment {
 
     private boolean checkLastName() {
         if (!edLastName.getText().toString().matches("[A-Z][a-z]*")) {
-            lastNameLayout.setError("Please insert a valid last name!");
+            lastNameLayout.setError(getActivity().getResources().getString(R.string.str_validation_lastname));
             return false;
         } else {
             lastNameLayout.setError(null);
@@ -228,7 +228,7 @@ public class StudentDetailsFragment extends Fragment {
 
     private boolean checkBirthDate() {
         if (!edBirthDate.getText().toString().matches("^[0-3]?[0-9]/[0-3]?[0-9]/(?:[0-9]{2})?[0-9]{2}$")) {
-            birthDateLayout.setError("Please insert a valid birth date!");
+            birthDateLayout.setError(getActivity().getResources().getString(R.string.str_validation_birthdate));
             return false;
         } else {
             birthDateLayout.setError(null);
@@ -239,7 +239,7 @@ public class StudentDetailsFragment extends Fragment {
     //ref: https://stackoverflow.com/questions/8204680/java-regex-email
     private boolean checkEmail() {
         if (!edEmail.getText().toString().matches("^(.+)@(.+)$")) {
-            emailLayout.setError("Please insert a valid email!");
+            emailLayout.setError(getActivity().getResources().getString(R.string.str_validation_email));
             return false;
         } else {
             emailLayout.setError(null);
@@ -249,7 +249,7 @@ public class StudentDetailsFragment extends Fragment {
 
     private boolean checkAddress() {
         if (!edAddress.getText().toString().matches("\\A(.*?)\\s+(\\d+[a-zA-Z]?\\s?[-]\\s?\\d*[a-zA-Z]?|\\d+[a-zA-Z-]?\\d*[a-zA-Z]?)")) {
-            addressLayout.setError("Please insert a valid home address and house number!");
+            addressLayout.setError(getActivity().getResources().getString(R.string.str_validation_address));
             return false;
         } else {
             addressLayout.setError(null);
@@ -259,7 +259,7 @@ public class StudentDetailsFragment extends Fragment {
 
     private boolean checkLocation() {
         if (!edLocation.getText().toString().matches("[A-Z][a-z]*")) {
-            locationLayout.setError("Please insert a valid location!");
+            locationLayout.setError(getActivity().getResources().getString(R.string.str_validation_location));
             return false;
         } else {
             locationLayout.setError(null);
@@ -269,7 +269,7 @@ public class StudentDetailsFragment extends Fragment {
 
     private boolean checkZip() {
         if (!edZip.getText().toString().matches("[0-9]+")) {
-            zipLayout.setError("Please insert a valid belgian zip!");
+            zipLayout.setError(getActivity().getResources().getString(R.string.str_validation_zip));
             return false;
         } else {
             zipLayout.setError(null);

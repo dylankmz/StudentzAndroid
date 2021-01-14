@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Studentz</string>
     <string name="txt_str_delete">Verwijder</string>
     <string name="txt_btn_str_gender">Kies geslacht</string>
     <string name="txt_str_gender">Geslacht</string>
@@ -39,4 +38,11 @@
     <string name="str_female">Vrouwelijk</string>
     <string name="str_info_title">Opgepast: sommige waarden kunnen niet gewijzigd worden!</string>
     <string name="str_info_body">"Je kan niet het geslacht, studierichting en klaslokaal van een student wijzigen na registratie, om dit te kunnen te doen gelieve de student te verwijderen en opnieuw te registreren! "</string>
+    <string name="str_validation_firstname">Gelieve een geldige voornaam in te geven!</string>
+    <string name="str_validation_lastname">Gelieve een geldige achternaam in te geven!</string>
+    <string name="str_validation_birthdate">Gelieve een geldige geboortedatum in te geven!</string>
+    <string name="str_validation_email">Gelieve een geldige email adres in te geven!</string>
+    <string name="str_validation_address">Gelieve een geldige adres en huisnummer in te geven!</string>
+    <string name="str_validation_location">Gelieve een geldige gemeente in te geven!</string>
+    <string name="str_validation_zip">Gelieve een geldige belgische postcode in te geven!</string>
 </resources>
