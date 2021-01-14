@@ -28,7 +28,7 @@
             android:layout_marginTop="8dp"
             android:text="Large Text"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@android:color/black"
+            android:textColor="?android:attr/textColorPrimary"
             android:textStyle="normal"
             app:layout_constraintStart_toEndOf="@+id/firstname_tv"
             app:layout_constraintTop_toTopOf="parent" />
@@ -83,7 +83,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:text="@string/txt_str_delete"
-            android:textColor="@color/design_default_color_error"
+            android:textColor="@android:color/holo_red_dark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
