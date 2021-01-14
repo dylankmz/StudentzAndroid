@@ -3,7 +3,7 @@
     <string name="txt_str_delete">Delete</string>
     <string name="txt_btn_str_gender">Pick Gender</string>
     <string name="txt_str_gender">Gender</string>
-    <string name="txt_str_birthdate">Birth Date</string>
+    <string name="txt_str_birthdate">Birth Date (pattern: dd/MM/yyyy)</string>
     <string name="str_txt_pick">Pick</string>
     <string name="str_txt_education">Pick Education</string>
     <string name="str_txt_classroom">Choose classroom</string>
