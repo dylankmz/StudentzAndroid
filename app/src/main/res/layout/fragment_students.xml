@@ -30,6 +30,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
+        android:paddingTop="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,4 +38,14 @@
         tools:listitem="@layout/student_row">
 
     </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:defaultQueryHint="@string/str_search_hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rv_students" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

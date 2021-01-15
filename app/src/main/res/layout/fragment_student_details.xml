@@ -28,6 +28,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
+
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView">
@@ -36,7 +37,9 @@
                     android:id="@+id/txtFirstName"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="@string/str_firstName" />
+                    android:hint="@string/str_firstName"
+                    android:inputType="textCapSentences"/>
+                />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -56,7 +59,9 @@
                     android:id="@+id/txtLastName"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="@string/str_lastName" />
+                    android:hint="@string/str_lastName"
+                    android:inputType="textCapSentences"/>
+                />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
@@ -99,7 +104,9 @@
                     android:id="@+id/txtBirthDate"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="@string/txt_str_birthdate" />
+                    android:hint="@string/txt_str_birthdate"
+                    android:inputType="textCapSentences"/>
+                />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -165,7 +172,9 @@
                     android:id="@+id/txtEmail"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="@string/str_txt_email" />
+                    android:hint="@string/str_txt_email"
+                    android:inputType="textCapSentences"/>
+                />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -185,7 +194,9 @@
                     android:id="@+id/txtAddress"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="@string/str_txt_address" />
+                    android:hint="@string/str_txt_address"
+                    android:inputType="textCapSentences"/>
+                />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -205,7 +216,8 @@
                     android:id="@+id/txtLocation"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="@string/str_txt_location" />
+                    android:hint="@string/str_txt_location"
+                    android:inputType="textCapSentences"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -225,7 +237,9 @@
                     android:id="@+id/txtZip"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="@string/str_txt_zip" />
+                    android:hint="@string/str_txt_zip"
+                    android:inputType="textCapSentences"/>
+                />
 
             </com.google.android.material.textfield.TextInputLayout>
 

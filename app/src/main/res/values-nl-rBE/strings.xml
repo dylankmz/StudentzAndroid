@@ -3,7 +3,7 @@
     <string name="txt_str_delete">Verwijder</string>
     <string name="txt_btn_str_gender">Kies geslacht</string>
     <string name="txt_str_gender">Geslacht</string>
-    <string name="txt_str_birthdate">Geboortedatum (formaat: dd/MM/yyyy)</string>
+    <string name="txt_str_birthdate">Geboortedatum (formaat: dag/maand/jaar)</string>
     <string name="str_txt_pick">Kies</string>
     <string name="str_txt_education">Kies studierichting</string>
     <string name="str_txt_classroom">Kies klaslokaal</string>
@@ -49,4 +49,9 @@
     <string name="toast_student_updated">Student gewijzigd!</string>
     <string name="toast_student_deleted">Student verwijderd!</string>
     <string name="title_pref_order">Gewenste sortering studentenlijst</string>
+    <string name="str_sort_education">Sorteer op studierichting</string>
+    <string name="str_sort_classroom">Sorteer op klaslokaal</string>
+    <string name="str_sort_lastname">Sorteer op achternaam (Alfabetisch)</string>
+    <string name="str_sort_zip">Sorteer op postcode</string>
+    <string name="str_search_hint">Zoek student</string>
 </resources>

@@ -4,7 +4,7 @@
     <string name="txt_str_delete">Delete</string>
     <string name="txt_btn_str_gender">Pick Gender</string>
     <string name="txt_str_gender">Gender</string>
-    <string name="txt_str_birthdate">Birth Date (pattern: dd/MM/yyyy)</string>
+    <string name="txt_str_birthdate">Birth Date (format: day/month/year)</string>
     <string name="str_txt_pick">Pick</string>
     <string name="str_txt_education">Pick Education</string>
     <string name="str_txt_classroom">Choose classroom</string>
@@ -54,6 +54,11 @@
     <string name="toast_student_updated">Student updated!</string>
     <string name="toast_student_deleted">Student deleted!</string>
 
+    <string name="str_sort_education">Sort on education</string>
+    <string name="str_sort_classroom">Sort on classroom</string>
+    <string name="str_sort_lastname">Sort on last name(Alphabetical)</string>
+    <string name="str_sort_zip">Sort on zip</string>
+
 
     <string-array name="classroom">
         <item>A</item>
@@ -63,7 +68,7 @@
         <item>E</item>
     </string-array>
 
-    <string name="title_pref_order">Choose your default ordering of students</string>
+    <string name="title_pref_order">How do you want to sort the students list?</string>
 
 <!--    <string name="title_shop">Shop</string>-->
 <!--    <string name="title_gifts">Gifts</string>-->
@@ -89,4 +94,5 @@
     <string name="str_url_ehb">https://www.erasmushogeschool.be/en/contact</string>
     <string name="str_txt_ehbphone">Phone number</string>
     <string name="str_txt_kaaiehbphone" translatable="false">02 523 37 37</string>
+    <string name="str_search_hint">Search student</string>
 </resources>

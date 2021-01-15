@@ -28,5 +28,8 @@ public interface StudentDAO {
     LiveData<List<Student>> getAllStudentsByEducation();
 
     @Query("SELECT * FROM Student ORDER BY lastName")
-    LiveData<List<Student>> findStudentsByLastName();
+    LiveData<List<Student>> findAllStudentsByLastName();
+
+    @Query("SELECT * FROM Student ORDER BY zip")
+    LiveData<List<Student>> findAllStudentsByZip();
 }

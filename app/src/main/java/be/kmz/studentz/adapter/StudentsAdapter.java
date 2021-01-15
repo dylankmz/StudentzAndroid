@@ -3,8 +3,6 @@ package be.kmz.studentz.adapter;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -14,11 +12,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.SearchView;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -29,7 +25,7 @@ import be.kmz.studentz.fragment.StudentDetailsFragment;
 import be.kmz.studentz.model.Student;
 import be.kmz.studentz.model.StudentViewModel;
 
-public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.StudentViewHolder> /*implements Filterable*/ {
+public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.StudentViewHolder> implements Filterable {
 
     private FragmentActivity activity;
     private List<Student> allStudents;
@@ -114,31 +110,33 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.Studen
         students.addAll(student);
     }
 
-//    @Override
-//    public Filter getFilter() {
-//        return new Filter() {
-//            @Override
-//            protected FilterResults performFiltering(CharSequence charSequence) {
-//                String input = charSequence.toString();
-//                students = allStudents;
-//                if (!input.isEmpty()) {
-//                    ArrayList<Student> tempList = new ArrayList<>();
-//
-//                    for (Student element : students) {
-//                        if (element.getLastName().toLowerCase().contains(input.toLowerCase())) {
-//                            tempList.add(element);
-//                        }
-//                    }
-//                    students = tempList;
-//                }
-//                return null;
-//            }
-//
-//            @Override
-//            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-//                notifyDataSetChanged();
-//            }
-//        };
-//    }
+    //ref: NoteDroid V4 app van Docent
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence charSequence) {
+                String input = charSequence.toString();
+                students = allStudents;
+                if (!input.isEmpty()) {
+                    ArrayList<Student> tempList = new ArrayList<>();
+
+                    //firstName & lastName
+                    for (Student element : students) {
+                        if (element.getLastName().toLowerCase().contains(input.toLowerCase()) || element.getFirstName().toLowerCase().contains(input.toLowerCase())) {
+                            tempList.add(element);
+                        }
+                    }
+                    students = tempList;
+                }
+                return null;
+            }
+
+            @Override
+            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+                notifyDataSetChanged();
+            }
+        };
+    }
 }
 

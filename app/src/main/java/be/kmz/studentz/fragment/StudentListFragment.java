@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
@@ -27,7 +28,6 @@ public class StudentListFragment extends Fragment {
     private RecyclerView studentsCard;
     private StudentsAdapter studentsAdapter;
     private FragmentActivity mContext;
-//    private TextView titleStudent;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -51,7 +51,6 @@ public class StudentListFragment extends Fragment {
         studentsAdapter = new StudentsAdapter(getActivity());
         studentsCard = rootView.findViewById(R.id.rv_students);
         studentsCard.setAdapter(studentsAdapter);
-//        titleStudent = rootView.findViewById(R.id.titleStudent);
 
         RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
         studentsCard.setLayoutManager(manager);
@@ -62,6 +61,22 @@ public class StudentListFragment extends Fragment {
             public void onChanged(List<Student> students) {
                 studentsAdapter.addStudents(students);
                 studentsAdapter.notifyDataSetChanged();
+            }
+        });
+
+        //ref: https://abhiandroid.com/ui/searchview & NoteDroid V4 van Docent
+        SearchView searchView = rootView.findViewById(R.id.searchview);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                studentsAdapter.getFilter().filter(query);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                studentsAdapter.getFilter().filter(newText);
+                return true;
             }
         });
         return rootView;

@@ -8,6 +8,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.preference.PreferenceManager;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import be.kmz.studentz.R;
@@ -19,6 +20,7 @@ public class StudentViewModel extends AndroidViewModel {
     private StudentDatabase db;
     private final Application myApp;
     private MutableLiveData<Student> sharedStudent;
+    private MutableLiveData<Student> exampleStudents;
 
 
     public StudentViewModel(Application app) {
@@ -27,6 +29,7 @@ public class StudentViewModel extends AndroidViewModel {
         db = StudentDatabase.getInstance(app);
         students = db.getStudentDAO().getAllStudentsByClassroom();
     }
+
 
     public MutableLiveData<Student> getSharedStudent() {
         if (sharedStudent == null) {
@@ -64,7 +67,9 @@ public class StudentViewModel extends AndroidViewModel {
             break;
             case "Sort on classroom": students = db.getStudentDAO().getAllStudentsByClassroom();
             break;
-            case "Sort on last name(Alphabetical)": students = db.getStudentDAO().findStudentsByLastName();
+            case "Sort on last name(Alphabetical)": students = db.getStudentDAO().findAllStudentsByLastName();
+            break;
+            case "Sort on zip": students = db.getStudentDAO().findAllStudentsByZip();
             break;
         }
         return students;
