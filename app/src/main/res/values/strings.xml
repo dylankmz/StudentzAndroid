@@ -4,7 +4,7 @@
     <string name="txt_str_delete">Delete</string>
     <string name="txt_btn_str_gender">Pick Gender</string>
     <string name="txt_str_gender">Gender</string>
-    <string name="txt_str_birthdate">Birth Date (format: day/month/year)</string>
+    <string name="txt_str_birthdate">Birth Date (day/month/year)</string>
     <string name="str_txt_pick">Pick</string>
     <string name="str_txt_education">Pick Education</string>
     <string name="str_txt_classroom">Choose classroom</string>
@@ -68,7 +68,7 @@
         <item>E</item>
     </string-array>
 
-    <string name="title_pref_order">How do you want to sort the students list?</string>
+    <string name="title_pref_order">Sort preference studentlist</string>
 
 <!--    <string name="title_shop">Shop</string>-->
 <!--    <string name="title_gifts">Gifts</string>-->

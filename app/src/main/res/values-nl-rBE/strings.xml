@@ -3,7 +3,7 @@
     <string name="txt_str_delete">Verwijder</string>
     <string name="txt_btn_str_gender">Kies geslacht</string>
     <string name="txt_str_gender">Geslacht</string>
-    <string name="txt_str_birthdate">Geboortedatum (formaat: dag/maand/jaar)</string>
+    <string name="txt_str_birthdate">Geboortedatum (dag/maand/jaar)</string>
     <string name="str_txt_pick">Kies</string>
     <string name="str_txt_education">Kies studierichting</string>
     <string name="str_txt_classroom">Kies klaslokaal</string>
@@ -28,7 +28,7 @@
     <string name="str_txt_contact_us">Contacteer ons</string>
     <string name="str_bottom_addstudent">Voeg student toe</string>
     <string name="str_url_ehb">https://www.erasmushogeschool.be/nl/contact</string>
-    <string name="str_txt_ehbphone">GSM nummer</string>
+    <string name="str_txt_ehbphone">GSM-nummer</string>
     <string name="str_it">Informatica</string>
     <string name="str_marketing">Marketing</string>
     <string name="str_law">Rechten</string>
