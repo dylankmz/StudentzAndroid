@@ -1,10 +1,12 @@
 package be.kmz.studentz.model;
 
 import android.app.Application;
+import android.content.SharedPreferences;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.preference.PreferenceManager;
 
 import java.util.List;
 
@@ -23,7 +25,7 @@ public class StudentViewModel extends AndroidViewModel {
         super(app);
         myApp = app;
         db = StudentDatabase.getInstance(app);
-        students = db.getStudentDAO().getAllStudents();
+        students = db.getStudentDAO().getAllStudentsByClassroom();
     }
 
     public MutableLiveData<Student> getSharedStudent() {
@@ -55,7 +57,16 @@ public class StudentViewModel extends AndroidViewModel {
     }
 
     public LiveData<List<Student>> getStudents() {
-        students = db.getStudentDAO().getAllStudents();
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(myApp);
+        String choice = preferences.getString("pref_order", "Sort on education");
+        switch (choice) {
+            case "Sort on education": students = db.getStudentDAO().getAllStudentsByEducation();
+            break;
+            case "Sort on classroom": students = db.getStudentDAO().getAllStudentsByClassroom();
+            break;
+            case "Sort on last name(Alphabetical)": students = db.getStudentDAO().findStudentsByLastName();
+            break;
+        }
         return students;
     }
 

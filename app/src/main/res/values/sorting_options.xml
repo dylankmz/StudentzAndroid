@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_order_list">
+        <item>Sort on education</item>
+        <item>Sort on classroom</item>
+        <item>Sort on last name(Alphabetical)</item>
+    </string-array>
+
+</resources>

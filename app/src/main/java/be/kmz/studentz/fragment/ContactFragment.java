@@ -81,7 +81,7 @@ public class ContactFragment extends Fragment implements OnMapReadyCallback {
 
     private void centerMapOnEhb() {
         LatLng coordEhb = new LatLng(50.842266078753354, 4.322805316393921);
-        CameraUpdate moveToEhb = CameraUpdateFactory.newLatLngZoom(coordEhb, 11);
+        CameraUpdate moveToEhb = CameraUpdateFactory.newLatLngZoom(coordEhb, 11.30f);
         mMap.animateCamera(moveToEhb);
     }
 
@@ -98,6 +98,5 @@ public class ContactFragment extends Fragment implements OnMapReadyCallback {
                 }
             }
         });
-
     }
 }

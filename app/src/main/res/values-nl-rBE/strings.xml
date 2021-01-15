@@ -48,4 +48,5 @@
     <string name="toast_student_added">Student toegevoegd!</string>
     <string name="toast_student_updated">Student gewijzigd!</string>
     <string name="toast_student_deleted">Student verwijderd!</string>
+    <string name="title_pref_order">Gewenste sortering studentenlijst</string>
 </resources>

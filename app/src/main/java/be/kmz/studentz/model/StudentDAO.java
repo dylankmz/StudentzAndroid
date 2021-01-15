@@ -21,9 +21,12 @@ public interface StudentDAO {
     @Delete
     void deleteStudent(Student s);
 
-    @Query("SELECT * FROM Student ORDER BY lastName")
-    LiveData<List<Student>> getAllStudents();
+    @Query("SELECT * FROM Student ORDER BY classroom")
+    LiveData<List<Student>> getAllStudentsByClassroom();
 
-    @Query("SELECT * FROM Student WHERE lastName LIKE :name")
-    LiveData<List<Student>> findStudentsByName(String name);
+    @Query("SELECT * FROM Student ORDER BY education")
+    LiveData<List<Student>> getAllStudentsByEducation();
+
+    @Query("SELECT * FROM Student ORDER BY lastName")
+    LiveData<List<Student>> findStudentsByLastName();
 }

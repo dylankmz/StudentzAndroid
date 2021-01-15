@@ -20,14 +20,26 @@
     <string name="str_sciences">Sciences</string>
     <string name="str_economy">Economy</string>
 
+    <string-array name="education">
+        <item>@string/str_it</item>
+        <item>@string/str_marketing</item>
+        <item>@string/str_law</item>
+        <item>@string/str_sciences</item>
+        <item>@string/str_economy</item>
+    </string-array>
+
 <!--    gender strings-->
     <string name="str_male">Male</string>
     <string name="str_female">Female</string>
 
+    <string-array name="gender">
+        <item>@string/str_male</item>
+        <item>@string/str_female</item>
+    </string-array>
+
 <!--    warning string-->
     <string name="str_info_title">Warning: certain values cannot be changed!</string>
-    <string name="str_info_body">You cannot change the gender, education and classroom of a student after registering the student," +
-                " to do this please remove the student and create a new student!</string>
+    <string name="str_info_body">You cannot change the gender, education and classroom of a student after registering the student, to do this please remove the student and create a new student!</string>
 
 <!--    validation strings-->
     <string name="str_validation_firstname">Please insert a valid first name!</string>
@@ -43,14 +55,6 @@
     <string name="toast_student_deleted">Student deleted!</string>
 
 
-    <string-array name="education">
-        <item>@string/str_it</item>
-        <item>@string/str_marketing</item>
-        <item>@string/str_law</item>
-        <item>@string/str_sciences</item>
-        <item>@string/str_economy</item>
-    </string-array>
-
     <string-array name="classroom">
         <item>A</item>
         <item>B</item>
@@ -59,10 +63,7 @@
         <item>E</item>
     </string-array>
 
-    <string-array name="gender">
-        <item>@string/str_male</item>
-        <item>@string/str_female</item>
-    </string-array>
+    <string name="title_pref_order">Choose your default ordering of students</string>
 
 <!--    <string name="title_shop">Shop</string>-->
 <!--    <string name="title_gifts">Gifts</string>-->

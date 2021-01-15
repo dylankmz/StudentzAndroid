@@ -9,6 +9,7 @@ import org.threeten.bp.LocalDate;
 import java.io.Serializable;
 import java.util.Arrays;
 
+//serializable kan handig om gegevens door te sturen naar andere schermen
 @Entity
 public class Student implements Serializable {
 
