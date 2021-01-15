@@ -121,9 +121,10 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.Studen
                 if (!input.isEmpty()) {
                     ArrayList<Student> tempList = new ArrayList<>();
 
-                    //firstName & lastName
+                    //firstName & lastName & email search
                     for (Student element : students) {
-                        if (element.getLastName().toLowerCase().contains(input.toLowerCase()) || element.getFirstName().toLowerCase().contains(input.toLowerCase())) {
+                        if (element.getLastName().toLowerCase().contains(input.toLowerCase()) || element.getFirstName().toLowerCase().contains(input.toLowerCase())
+                        || element.getEmail().toLowerCase().contains(input.toLowerCase())) {
                             tempList.add(element);
                         }
                     }

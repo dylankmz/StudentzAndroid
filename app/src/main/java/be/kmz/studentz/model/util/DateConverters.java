@@ -3,6 +3,7 @@ package be.kmz.studentz.model.util;
 import androidx.room.TypeConverter;
 import org.threeten.bp.LocalDate;
 
+//not using
 public class DateConverters {
 
     @TypeConverter
