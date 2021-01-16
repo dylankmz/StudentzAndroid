@@ -48,10 +48,10 @@
     <string name="toast_student_added">Student toegevoegd!</string>
     <string name="toast_student_updated">Student gewijzigd!</string>
     <string name="toast_student_deleted">Student verwijderd!</string>
-    <string name="title_pref_order">Gewenste sortering studentenlijst</string>
-    <string name="str_sort_education">Sorteer op studierichting</string>
-    <string name="str_sort_classroom">Sorteer op klaslokaal</string>
-    <string name="str_sort_lastname">Sorteer op achternaam (Alfabetisch)</string>
-    <string name="str_sort_zip">Sorteer op postcode</string>
+    <string name="title_pref_order">Studenten gefilterd op</string>
+    <string name="str_sort_education">Studierichting</string>
+    <string name="str_sort_classroom">Klaslokaal</string>
+    <string name="str_sort_lastname">Achternaam</string>
+    <string name="str_sort_zip">Postcode</string>
     <string name="str_search_hint">Zoek student</string>
 </resources>

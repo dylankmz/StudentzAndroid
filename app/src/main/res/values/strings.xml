@@ -2,11 +2,11 @@
 <!--    field strings-->
     <string name="app_name" translatable="false">Studentz</string>
     <string name="txt_str_delete">Delete</string>
-    <string name="txt_btn_str_gender">Pick Gender</string>
+    <string name="txt_btn_str_gender">Pick gender</string>
     <string name="txt_str_gender">Gender</string>
-    <string name="txt_str_birthdate">Birth Date (day/month/year)</string>
+    <string name="txt_str_birthdate">Birth date (day/month/year)</string>
     <string name="str_txt_pick">Pick</string>
-    <string name="str_txt_education">Pick Education</string>
+    <string name="str_txt_education">Pick education</string>
     <string name="str_txt_classroom">Choose classroom</string>
     <string name="str_txt_email">Email</string>
     <string name="str_txt_address">Address &amp; House number</string>
@@ -54,10 +54,10 @@
     <string name="toast_student_updated">Student updated!</string>
     <string name="toast_student_deleted">Student deleted!</string>
 
-    <string name="str_sort_education">Sort on education</string>
-    <string name="str_sort_classroom">Sort on classroom</string>
-    <string name="str_sort_lastname">Sort on last name(Alphabetical)</string>
-    <string name="str_sort_zip">Sort on zip</string>
+    <string name="str_sort_education">Education</string>
+    <string name="str_sort_classroom">Classroom</string>
+    <string name="str_sort_lastname">Last name</string>
+    <string name="str_sort_zip">ZIP</string>
 
 
     <string-array name="classroom">
@@ -68,7 +68,7 @@
         <item>E</item>
     </string-array>
 
-    <string name="title_pref_order">Sort preference studentlist</string>
+    <string name="title_pref_order">Students filtered by</string>
 
 <!--    <string name="title_shop">Shop</string>-->
 <!--    <string name="title_gifts">Gifts</string>-->
@@ -78,10 +78,10 @@
     <string name="str_bottom_students">Students</string>
     <string name="str_bottom_addstudent">Add Student</string>
     <string name="str_bottom_settings">Settings</string>
-    <string name="str_firstName">First Name</string>
-    <string name="str_lastName">Last Name</string>
+    <string name="str_firstName">First name</string>
+    <string name="str_lastName">Last name</string>
     <string name="str_pick_gender">Choose gender</string>
-    <string name="str_pick_classroom">Pick Classroom</string>
+    <string name="str_pick_classroom">Pick classroom</string>
     <string name="str_pick_education">Pick education</string>
     <string name="str_txt_intro">Welcome to Studentz!</string>
     <string name="str_txt_contact">Contact</string>
