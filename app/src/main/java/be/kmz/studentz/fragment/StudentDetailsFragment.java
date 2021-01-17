@@ -37,6 +37,7 @@ import be.kmz.studentz.model.StudentViewModel;
 
 public class StudentDetailsFragment extends Fragment {
 
+    //nodige fields
     private EditText edFirstName, edLastName, edBirthDate, edEmail, edAddress, edLocation, edZip;
     private TextView tvGender, tvEducation, tvClassroom, tvAddStudentTitle;
     private TextInputLayout firstNameLayout, lastNameLayout, birthDateLayout, emailLayout, addressLayout, locationLayout, zipLayout;
@@ -45,20 +46,25 @@ public class StudentDetailsFragment extends Fragment {
     private Student selectedStudent;
     private FragmentActivity mContext;
 
+    //constructor
     public StudentDetailsFragment() {
     }
 
+    //nieuwe instantie
     @NonNull
     public static StudentDetailsFragment newInstance() {
         return new StudentDetailsFragment();
     }
 
+    //nieuwe instantie met Bundle (data)
     public static Fragment newInstance(Bundle data) {
         StudentDetailsFragment studentDetailsFragment = new StudentDetailsFragment();
         studentDetailsFragment.setArguments(data);
         return studentDetailsFragment;
     }
 
+    //wordt opgeroepen wanneer de fragment toegevoegd is aan de fragmentmanager en
+    //gekoppeld aan zijn hostactivity, fragment is actief
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -66,11 +72,14 @@ public class StudentDetailsFragment extends Fragment {
     }
 
 
+    //wordt gebruikt om een instantie te maken van mijn user interface view
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        //inflater converteert onze xml layout bestand in de juiste Viewbjects, xml is input om view objects te maken.
         View rootView = inflater.inflate(R.layout.fragment_student_details, container, false);
 
+        //ref NoteDroid V4, is nodig omd data te kunnen doorgeven van de geselecteerde student
         selectedStudent = (getArguments() != null)?(Student) getArguments().getSerializable("passedStudent"):null;
 
         edFirstName = rootView.findViewById(R.id.txtFirstName);
@@ -106,6 +115,7 @@ public class StudentDetailsFragment extends Fragment {
         locationLayout = rootView.findViewById(R.id.txtLocationLayout);
         zipLayout = rootView.findViewById(R.id.txtZipLayout);
 
+        //StudentViewModel class wordt gebruikt om vanuit de sharedStudent methode data te koppelen
         StudentViewModel model = new ViewModelProvider(mContext).get(StudentViewModel.class);
         model.getSharedStudent().observe(getViewLifecycleOwner(), new Observer<Student>() {
                     @Override
@@ -133,6 +143,7 @@ public class StudentDetailsFragment extends Fragment {
             edZip.setText(selectedStudent.getZip());
         }
 
+        //onclicklistener van mijn fab
         FloatingActionButton fab = rootView.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -175,6 +186,7 @@ public class StudentDetailsFragment extends Fragment {
         return rootView;
     }
 
+    //gender dialog
     private View.OnClickListener openGenderDialogListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -183,6 +195,7 @@ public class StudentDetailsFragment extends Fragment {
         }
     };
 
+    //education dialog
     private View.OnClickListener openEducationDialogListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -191,6 +204,7 @@ public class StudentDetailsFragment extends Fragment {
         }
     };
 
+    //class dialog
     private View.OnClickListener openClassroomDialogListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -199,6 +213,7 @@ public class StudentDetailsFragment extends Fragment {
         }
     };
 
+    //info dialog
     private View.OnClickListener infoListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -206,6 +221,7 @@ public class StudentDetailsFragment extends Fragment {
         }
     };
 
+    //volgende methodes zijn validatie methodes voor mijn inputfields
     //ref voor regex: stackoverflow & https://regexlib.com/Search.aspx?k=street&AspxAutoDetectCookieSupport=1
     private boolean checkFirstName() {
         if (!edFirstName.getText().toString().matches("[A-Z][a-z]*")) {

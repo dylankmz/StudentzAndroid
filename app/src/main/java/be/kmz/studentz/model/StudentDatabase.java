@@ -12,6 +12,8 @@ import java.util.concurrent.Executors;
 
 import be.kmz.studentz.model.util.DateConverters;
 
+//nodige executors, threads, builder voor mijn RoomDatabase
+//ref voorbeeld project van les
 @Database(version = 1, entities = {Student.class}, exportSchema = false)
 //@TypeConverters({DateConverters.class})
 public abstract class StudentDatabase extends RoomDatabase {

@@ -25,7 +25,10 @@ import be.kmz.studentz.fragment.StudentDetailsFragment;
 import be.kmz.studentz.model.Student;
 import be.kmz.studentz.model.StudentViewModel;
 
+//filterable is nodig voor voor search, het is een interface met een publieke abstracte methode getFilter()
 public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.StudentViewHolder> implements Filterable {
+
+    //adapter klasse is nodig voor onze data(bridge), het geeft toegang
 
     private FragmentActivity activity;
     private List<Student> allStudents;
@@ -36,6 +39,8 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.Studen
         final Button btnDelete;
         final CardView card;
 
+        //Viewholder bevat constanten voor de componenten in de layout en een constructor
+        //elke verwijzing/element wordt 1x opgebouwd en bijgehouden als cache
         StudentViewHolder(@NonNull View itemView) {
             super(itemView);
             tvFirstName = itemView.findViewById(R.id.firstname_tv);
@@ -48,6 +53,7 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.Studen
             card.setOnClickListener(detailsListener);
         }
 
+        //deleteListener om de student op de geklikte positie te verwijderen
         private View.OnClickListener deleteListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,26 +66,31 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.Studen
             }
         };
 
+        //detailsListener om meer gegevens van de student op de geklikte positie weer te geven
         private View.OnClickListener detailsListener = new View.OnClickListener() {
             @Override
 
             public void onClick(View v) {
+                //positie nemen met adapter
                 int position = getAdapterPosition();
                 Student toPass = students.get(position);
 
                 Bundle data = new Bundle();
+                //student data uit genomen positie plaatsen in Bundle
                 data.putSerializable("passedStudent", toPass);
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, StudentDetailsFragment.newInstance(data)).commit();
             }
         };
     }
 
+    //ref: NoteDroid V4
     public StudentsAdapter(FragmentActivity activity) {
         this.allStudents = new ArrayList<>();
         this.students = new ArrayList<>();
         this.activity = activity;
     }
 
+    //maakt nieuwe viewholder als er geen bestaande viewholders zijn
     @NonNull
     @Override
     public StudentViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -88,6 +99,7 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.Studen
         return new StudentViewHolder(studentCard);
     }
 
+    //dit wordt gebruikt om data te tonen vanuit de juiste positie, wordt geupdate
     @Override
     public void onBindViewHolder(@NonNull StudentViewHolder studentViewHolder, int i) {
         Student s = students.get(i);
@@ -97,12 +109,14 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.Studen
         studentViewHolder.tvClassroom.setText(s.getClassroom());
     }
 
+    //dit is nodige voor onze adapter klasse, returned lijstgrootte
     @Override
     public int getItemCount() {
         return students.size();
     }
 
 
+    //ref: NoteDroid V4, lijsten resetten
     public void addStudents(List<Student> student) {
         allStudents.clear();
         allStudents.addAll(student);

@@ -30,20 +30,26 @@ import be.kmz.studentz.model.ehb.EhbModel;
 
 public class ContactFragment extends Fragment implements OnMapReadyCallback {
 
+    //fields dat ik nodig heb
     private FragmentActivity mContext;
     private MapView mMapView;
     private GoogleMap mMap;
 
+    //wordt opgeroepen wanneer de fragment toegevoegd is aan de fragmentmanager en
+    //gekoppeld aan zijn hostactivity, fragment is actief
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         mContext = (FragmentActivity) context;
     }
 
+    //nieuwe instantie van mijn fragment
     public static ContactFragment newInstance() {
         return new ContactFragment();
     }
 
+
+    //wordt gebruikt om een instantie te maken van mijn user interface view
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -54,6 +60,7 @@ public class ContactFragment extends Fragment implements OnMapReadyCallback {
         return rootView;
     }
 
+    //volgende methodes zijn nodig om de lifecycle van maps te linken aan lifecycle van de fragment
     @Override
     public void onResume() {
         super.onResume();
@@ -72,6 +79,7 @@ public class ContactFragment extends Fragment implements OnMapReadyCallback {
         mMapView.onDestroy();
     }
 
+    //wanneer maps wordt ingeladen, wat moet er gebeuren?
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -79,12 +87,14 @@ public class ContactFragment extends Fragment implements OnMapReadyCallback {
         createMarker();
     }
 
+    //methode om te centreren op brussel waarbij de 3 grote campussen worden getoond
     private void centerMapOnEhb() {
         LatLng coordEhb = new LatLng(50.842266078753354, 4.322805316393921);
         CameraUpdate moveToEhb = CameraUpdateFactory.newLatLngZoom(coordEhb, 11.30f);
         mMap.animateCamera(moveToEhb);
     }
 
+    //metohde om markers te maken
     private void createMarker() {
         EhbModel model = new ViewModelProvider(mContext).get(EhbModel.class);
         model.getEhbCampusList().observe(getViewLifecycleOwner(), new Observer<ArrayList<Ehb>>() {

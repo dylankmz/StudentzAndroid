@@ -20,6 +20,7 @@ public class GenderDialog extends DialogFragment {
     private FragmentActivity mContext;
     private int selectedIndex;
 
+    //positie van de geselectioneerde element
     private DialogInterface.OnClickListener selectionListener = new DialogInterface.OnClickListener() {
         @Override
         public void onClick(DialogInterface dialog, int which) {
@@ -27,6 +28,7 @@ public class GenderDialog extends DialogFragment {
         }
     };
 
+    //mijn gender array opvragen en koppelen met selectedIndex
     public DialogInterface.OnClickListener genderListener = new DialogInterface.OnClickListener() {
         @Override
         public void onClick(DialogInterface dialog, int which) {
@@ -36,12 +38,16 @@ public class GenderDialog extends DialogFragment {
         }
     };
 
+    //wordt opgeroepen wanneer de fragment toegevoegd is aan de fragmentmanager en
+    //gekoppeld aan zijn hostactivity, fragment is actief
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         mContext = (FragmentActivity) context;
     }
 
+    //ik bouw mijn dialoog op met builder, ik geef de bovenstaande listeners mee aan
+    //de juiste buttons
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {

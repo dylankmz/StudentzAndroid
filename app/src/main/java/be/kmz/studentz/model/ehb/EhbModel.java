@@ -10,6 +10,7 @@ import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
 
+//viewmodel van ehb
 public class EhbModel extends AndroidViewModel {
 
     private MutableLiveData<ArrayList<Ehb>> ehbCampusList;

@@ -28,7 +28,7 @@
     <string name="str_txt_contact_us">Contacteer ons</string>
     <string name="str_bottom_addstudent">Voeg student toe</string>
     <string name="str_url_ehb">https://www.erasmushogeschool.be/nl/contact</string>
-    <string name="str_txt_ehbphone">GSM-nummer</string>
+    <string name="str_txt_ehbphone">Telefoonnummer</string>
     <string name="str_it">Informatica</string>
     <string name="str_marketing">Marketing</string>
     <string name="str_law">Rechten</string>
@@ -48,7 +48,7 @@
     <string name="toast_student_added">Student toegevoegd!</string>
     <string name="toast_student_updated">Student gewijzigd!</string>
     <string name="toast_student_deleted">Student verwijderd!</string>
-    <string name="title_pref_order">Studenten gefilterd op</string>
+    <string name="title_pref_order">Studenten gefilterd op:</string>
     <string name="str_sort_education">Studierichting</string>
     <string name="str_sort_classroom">Klaslokaal</string>
     <string name="str_sort_lastname">Achternaam</string>

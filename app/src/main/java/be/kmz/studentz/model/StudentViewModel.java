@@ -13,14 +13,16 @@ import java.util.List;
 
 import be.kmz.studentz.R;
 
+//viewmodel klasse
 public class StudentViewModel extends AndroidViewModel {
 
     public LiveData<List<Student>> students;
     private Student student;
     private StudentDatabase db;
+    //constante variabele, value kan niet gewijzigd worden
     private final Application myApp;
+    //mutablelivedata wordt gebruikt als je data wilt wijzigen, met livedata is dit niet mogelijk
     private MutableLiveData<Student> sharedStudent;
-    private MutableLiveData<Student> exampleStudents;
 
 
     public StudentViewModel(Application app) {
@@ -31,6 +33,7 @@ public class StudentViewModel extends AndroidViewModel {
     }
 
 
+    //sharedStudent om default waarden te kunnen hebben
     public MutableLiveData<Student> getSharedStudent() {
         if (sharedStudent == null) {
             student = new Student();
@@ -59,6 +62,7 @@ public class StudentViewModel extends AndroidViewModel {
         sharedStudent.setValue(student);
     }
 
+    //getStudents met preferences, ik roep de juiste querys hiervoor, hulp van prof gekregen
     public LiveData<List<Student>> getStudents() {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(myApp);
         String choice = preferences.getString("pref_order", "Sort on education");
@@ -75,6 +79,7 @@ public class StudentViewModel extends AndroidViewModel {
         return students;
     }
 
+    //insert
     public void insertStudent(Student s) {
         StudentDatabase.databaseExecutor.execute(new Runnable() {
             @Override
@@ -84,6 +89,7 @@ public class StudentViewModel extends AndroidViewModel {
         });
     }
 
+    //update
     public void updateStudent(Student s){
         StudentDatabase.databaseExecutor.execute(new Runnable() {
             @Override
@@ -93,6 +99,7 @@ public class StudentViewModel extends AndroidViewModel {
         });
     }
 
+    //delete
     public void deleteStudent(Student s){
         StudentDatabase.databaseExecutor.execute(new Runnable() {
             @Override

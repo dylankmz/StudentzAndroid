@@ -9,6 +9,7 @@ import androidx.room.Update;
 
 import java.util.List;
 
+//data access object interface voor Room en querys
 @Dao
 public interface StudentDAO {
 

@@ -29,32 +29,41 @@ public class StudentListFragment extends Fragment {
     private StudentsAdapter studentsAdapter;
     private FragmentActivity mContext;
 
+
+    //wordt opgeroepen wanneer de fragment toegevoegd is aan de fragmentmanager en
+    //gekoppeld aan zijn hostactivity, fragment is actief
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         mContext = (FragmentActivity) context;
     }
 
+    //constructor
     public StudentListFragment() {
     }
 
+    //nieuwe instantie
     @NonNull
     public static StudentListFragment newInstance() {
         return new StudentListFragment();
     }
 
+    //wordt gebruikt om een instantie te maken van mijn user interface view
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        //inflater converteert onze xml layout bestand in de juiste Viewbjects, xml is input om view objects te maken.
         View rootView = inflater.inflate(R.layout.fragment_students, container, false);
 
         studentsAdapter = new StudentsAdapter(getActivity());
         studentsCard = rootView.findViewById(R.id.rv_students);
         studentsCard.setAdapter(studentsAdapter);
 
+        //vertical scroll
         RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
         studentsCard.setLayoutManager(manager);
 
+        //alle studenten krijgen
         StudentViewModel model = new ViewModelProvider(mContext).get(StudentViewModel.class);
         model.getStudents().observe(getViewLifecycleOwner(), new Observer<List<Student>>() {
             @Override

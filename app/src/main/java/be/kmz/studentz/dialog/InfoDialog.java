@@ -12,6 +12,7 @@ import be.kmz.studentz.R;
 
 public class InfoDialog extends DialogFragment {
 
+    //een simpele alertdialog waar ik iets meedeel met de werking van mijn app.
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {

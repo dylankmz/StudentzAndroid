@@ -68,7 +68,7 @@
         <item>E</item>
     </string-array>
 
-    <string name="title_pref_order">Students filtered by</string>
+    <string name="title_pref_order">Students filtered by:</string>
 
 <!--    <string name="title_shop">Shop</string>-->
 <!--    <string name="title_gifts">Gifts</string>-->

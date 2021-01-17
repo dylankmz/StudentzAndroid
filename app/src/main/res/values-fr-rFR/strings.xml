@@ -34,7 +34,7 @@
     <string name="str_sort_classroom">Classe</string>
     <string name="str_sort_lastname">Nom de famille</string>
     <string name="str_sort_zip">Code postal</string>
-    <string name="title_pref_order">Filtrer les étudiants sur</string>
+    <string name="title_pref_order">Filtrer les étudiants sur:</string>
     <string name="str_btn_add">Ajouter</string>
     <string name="str_bottom_students">Etudiants</string>
     <string name="str_bottom_addstudent">Ajouter un étudiant</string>
@@ -51,7 +51,7 @@
     <string name="str_txt_titleAddStudent">Ajouter un étudiant</string>
     <string name="str_txt_titlecontact">Contact</string>
     <string name="str_txt_contact_us">Nous contacter</string>
-    <string name="str_txt_ehbphone">Numéro de gsm</string>
+    <string name="str_txt_ehbphone">Numéro de téléphone</string>
     <string name="str_search_hint">Trouver un étudiant</string>
     <string name="str_url_ehb">https://www.erasmushogeschool.be/en/contact</string>
 </resources>

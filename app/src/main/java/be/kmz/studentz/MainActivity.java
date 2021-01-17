@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //bottomnav met listener
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(
                 navListener
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         transaction.replace(R.id.nav_host_fragment, StudentListFragment.class, null).setCustomAnimations(R.anim.fragment_fade_enter, R.anim.fragment_fade_exit);
         transaction.commit();
 
+        //unused
         AndroidThreeTen.init(this);
 
     }

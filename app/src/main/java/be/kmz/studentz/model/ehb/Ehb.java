@@ -2,6 +2,7 @@ package be.kmz.studentz.model.ehb;
 
 import com.google.android.gms.maps.model.LatLng;
 
+//ehb model
 public class Ehb {
 
     private LatLng coordinate;

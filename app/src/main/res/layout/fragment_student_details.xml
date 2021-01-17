@@ -38,7 +38,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="@string/str_firstName"
-                    android:inputType="textCapSentences"/>
+                    android:inputType="textCapSentences"
+                    android:imeOptions="actionNext"
+                    />
                 />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -60,7 +62,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="@string/str_lastName"
-                    android:inputType="textCapSentences"/>
+                    android:inputType="textCapSentences"
+                    android:imeOptions="actionNext"
+                    />
                 />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -105,7 +109,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="@string/txt_str_birthdate"
-                    android:inputType="textCapSentences"/>
+                    android:imeOptions="actionNext"
+                    />
                 />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -173,6 +178,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="@string/str_txt_email"
+                    android:inputType="textEmailAddress"
+                    android:imeOptions="actionNext"
                     />
                 />
             </com.google.android.material.textfield.TextInputLayout>
@@ -195,7 +202,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="@string/str_txt_address"
-                    android:inputType="textCapSentences"/>
+                    android:inputType="textCapSentences"
+                    android:imeOptions="actionNext"
+                    />
                 />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -217,7 +226,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="@string/str_txt_location"
-                    android:inputType="textCapSentences"/>
+                    android:inputType="textCapSentences"
+                    android:imeOptions="actionNext"
+                    />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -238,7 +249,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="@string/str_txt_zip"
-                    android:inputType="textCapSentences"/>
+                    android:inputType="number"
+                    android:imeOptions="actionDone"
+                    />
                 />
 
             </com.google.android.material.textfield.TextInputLayout>
