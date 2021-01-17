@@ -8,7 +8,7 @@
     <string name="str_txt_pick">Pick</string>
     <string name="str_txt_education">Pick education</string>
     <string name="str_txt_classroom">Choose classroom</string>
-    <string name="str_txt_email">Email</string>
+    <string name="str_txt_email">E-mail</string>
     <string name="str_txt_address">Address &amp; House number</string>
     <string name="str_txt_location">Location</string>
     <string name="str_txt_zip">ZIP</string>
@@ -39,13 +39,13 @@
 
 <!--    warning string-->
     <string name="str_info_title">Warning: certain values cannot be changed!</string>
-    <string name="str_info_body">You cannot change the gender, education and classroom of a student after registering the student, to do this please remove the student and create a new student!</string>
+    <string name="str_info_body">You cannot change the gender, education and classroom of a student after registering, to do this please remove the student and register again!</string>
 
 <!--    validation strings-->
     <string name="str_validation_firstname">Please insert a valid first name!</string>
     <string name="str_validation_lastname">Please insert a valid last name!</string>
     <string name="str_validation_birthdate">Please insert a valid birth date!</string>
-    <string name="str_validation_email">Please insert a valid email!</string>
+    <string name="str_validation_email">Please insert a valid e-mail!</string>
     <string name="str_validation_address">Please insert a valid home address and house number!</string>
     <string name="str_validation_location">Please insert a valid location!</string>
     <string name="str_validation_zip">Please insert a valid belgian zip!</string>

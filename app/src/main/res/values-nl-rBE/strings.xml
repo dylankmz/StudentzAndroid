@@ -7,7 +7,7 @@
     <string name="str_txt_pick">Kies</string>
     <string name="str_txt_education">Kies studierichting</string>
     <string name="str_txt_classroom">Kies klaslokaal</string>
-    <string name="str_txt_email">Email</string>
+    <string name="str_txt_email">E-mail</string>
     <string name="str_txt_address">Adres &amp; Huisnummer</string>
     <string name="str_txt_location">Gemeente</string>
     <string name="str_txt_zip">Postcode</string>
@@ -41,7 +41,7 @@
     <string name="str_validation_firstname">Gelieve een geldige voornaam in te geven!</string>
     <string name="str_validation_lastname">Gelieve een geldige achternaam in te geven!</string>
     <string name="str_validation_birthdate">Gelieve een geldige geboortedatum in te geven!</string>
-    <string name="str_validation_email">Gelieve een geldige email adres in te geven!</string>
+    <string name="str_validation_email">Gelieve een geldige e-mail adres in te geven!</string>
     <string name="str_validation_address">Gelieve een geldige adres en huisnummer in te geven!</string>
     <string name="str_validation_location">Gelieve een geldige gemeente in te geven!</string>
     <string name="str_validation_zip">Gelieve een geldige belgische postcode in te geven!</string>

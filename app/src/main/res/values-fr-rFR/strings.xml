@@ -7,7 +7,7 @@
     <string name="str_txt_pick">Choisir</string>
     <string name="str_txt_education">Choisissez l\'éducation</string>
     <string name="str_txt_classroom">Choisissez la classe</string>
-    <string name="str_txt_email">Adresse email</string>
+    <string name="str_txt_email">Adresse e-mail</string>
     <string name="str_txt_address">Adresse &amp; Numéro de maison</string>
     <string name="str_txt_location">Commune</string>
     <string name="str_txt_zip">Code postal</string>
@@ -19,13 +19,13 @@
     <string name="str_male">Masculin</string>
     <string name="str_female">Féminin</string>
     <string name="str_info_title">Attention: certaines valeurs ne peuvent pas être modifiées!</string>
-    <string name="str_info_body">Vous ne pouvez pas changer le sexe, l\'éducation et la classe d\'un élève après l\'inscription de l\'élève, pour ce faire, veuillez supprimer l\'élève et créer un nouvel élève!</string>
+    <string name="str_info_body">Vous ne pouvez pas changer le sexe, l\'éducation et la classe de l\'élève après l\'inscription de ses données. Pour ce faire, veuillez d\'abord supprimer l\'élève, et refaire une nouvelle inscription.</string>
     <string name="str_validation_firstname">Veuillez introduire un prénom correct!</string>
     <string name="str_validation_lastname">Veuillez introduire un nom de famille correct!</string>
     <string name="str_validation_birthdate">Veuillez introduire une date de naissance valable!</string>
-    <string name="str_validation_email">Veuillez introduire une adresse email correct!</string>
+    <string name="str_validation_email">Veuillez introduire une adresse e-mail correct!</string>
     <string name="str_validation_address">Veuillez introduire une adresse et numéro de maison valable!</string>
-    <string name="str_validation_location">Veuillez introduire une communce valable!</string>
+    <string name="str_validation_location">Veuillez introduire une commune valable!</string>
     <string name="str_validation_zip">Veuillez introduire un code postal valable!</string>
     <string name="toast_student_added">Etudiant ajouté!</string>
     <string name="toast_student_updated">Etudiant modifié!</string>
@@ -34,7 +34,7 @@
     <string name="str_sort_classroom">Classe</string>
     <string name="str_sort_lastname">Nom de famille</string>
     <string name="str_sort_zip">Code postal</string>
-    <string name="title_pref_order">Filtrer les étudiants sur:</string>
+    <string name="title_pref_order">Filtrer les étudiants suivant:</string>
     <string name="str_btn_add">Ajouter</string>
     <string name="str_bottom_students">Etudiants</string>
     <string name="str_bottom_addstudent">Ajouter un étudiant</string>
@@ -52,6 +52,6 @@
     <string name="str_txt_titlecontact">Contact</string>
     <string name="str_txt_contact_us">Nous contacter</string>
     <string name="str_txt_ehbphone">Numéro de téléphone</string>
-    <string name="str_search_hint">Trouver un étudiant</string>
+    <string name="str_search_hint">Trouver un élève</string>
     <string name="str_url_ehb">https://www.erasmushogeschool.be/en/contact</string>
 </resources>
