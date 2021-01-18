@@ -1,31 +1,30 @@
 package be.kmz.studentz.fragment;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.Navigation;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputLayout;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import be.kmz.studentz.R;
 import be.kmz.studentz.dialog.ClassroomDialog;
@@ -43,6 +42,8 @@ public class StudentDetailsFragment extends Fragment {
     private TextInputLayout firstNameLayout, lastNameLayout, birthDateLayout, emailLayout, addressLayout, locationLayout, zipLayout;
     private Button btnGender, btnEducation, btnClassroom;
     private ImageButton btnInfo;
+    private ImageView dateImage;
+    private int mDay, mMonth, mYear;
     private Student selectedStudent;
     private FragmentActivity mContext;
 
@@ -95,6 +96,8 @@ public class StudentDetailsFragment extends Fragment {
         tvClassroom = rootView.findViewById(R.id.txtClassroom);
         tvAddStudentTitle = rootView.findViewById(R.id.titleAddStudent);
 
+        dateImage = rootView.findViewById(R.id.imageViewDate);
+
         btnGender = rootView.findViewById(R.id.btn_gender);
         btnGender.setOnClickListener(openGenderDialogListener);
 
@@ -117,7 +120,7 @@ public class StudentDetailsFragment extends Fragment {
 
         //StudentViewModel class wordt gebruikt om vanuit de sharedStudent methode data te koppelen
         StudentViewModel model = new ViewModelProvider(mContext).get(StudentViewModel.class);
-        model.getSharedStudent().observe(getViewLifecycleOwner(), new Observer<Student>() {
+        model.getDefaultValues().observe(getViewLifecycleOwner(), new Observer<Student>() {
                     @Override
                     public void onChanged(Student student) {
                         //als ik deze verificatie niet uitvoer zet hij de waarde van gender, education en classroom
@@ -149,7 +152,7 @@ public class StudentDetailsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 StudentViewModel model = new ViewModelProvider(mContext).get(StudentViewModel.class);
-                if (selectedStudent == null && checkFirstName() && checkLastName() && checkBirthDate()
+                if (selectedStudent == null && checkFirstName() && checkLastName()
                         && checkEmail() && checkAddress() && checkLocation() && checkZip()) {
                     Student s = new Student(edFirstName.getText().toString(),
                             edLastName.getText().toString(),
@@ -164,7 +167,7 @@ public class StudentDetailsFragment extends Fragment {
                     Toast.makeText(mContext, R.string.toast_student_added, Toast.LENGTH_LONG).show();
                     model.insertStudent(s);
                     mContext.getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, StudentListFragment.newInstance()).commit();
-                } else if (checkFirstName() && checkLastName() && checkBirthDate()
+                } else if (checkFirstName() && checkLastName()
                         && checkEmail() && checkAddress() && checkLocation() && checkZip()){
                     selectedStudent.setFirstName(edFirstName.getText().toString());
                     selectedStudent.setLastName(edLastName.getText().toString());
@@ -183,8 +186,28 @@ public class StudentDetailsFragment extends Fragment {
             }
         });
 
+//        ref: https://www.youtube.com/watch?v=hwe1abDO2Ag
+        dateImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar cal = Calendar.getInstance();
+                mDay = cal.get(Calendar.DAY_OF_MONTH);
+                mMonth = cal.get(Calendar.MONTH);
+                mYear = cal.get(Calendar.YEAR);
+                DatePickerDialog datePickerDialog = new DatePickerDialog(mContext, android.R.style.Theme_DeviceDefault_Dialog, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        month = month + 1;
+                        edBirthDate.setText(dayOfMonth + "/" + month + "/" +year);
+                    }
+                }, mYear, mMonth, mDay);
+                datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis()-1000);
+                datePickerDialog.show();
+            }
+        });
         return rootView;
     }
+
 
     //gender dialog
     private View.OnClickListener openGenderDialogListener = new View.OnClickListener() {
@@ -243,15 +266,16 @@ public class StudentDetailsFragment extends Fragment {
         }
     }
 
-    private boolean checkBirthDate() {
-        if (!edBirthDate.getText().toString().matches("^[0-3]?[0-9]/[0-3]?[0-9]/(?:[0-9]{2})?[0-9]{2}$")) {
-            birthDateLayout.setError(getActivity().getResources().getString(R.string.str_validation_birthdate));
-            return false;
-        } else {
-            birthDateLayout.setError(null);
-            return true;
-        }
-    }
+    //niet meer echt nodig met datepicker
+//    private boolean checkBirthDate() {
+//        if (!edBirthDate.getText().toString().matches("^[0-3]?[0-9]/[0-3]?[0-9]/(?:[0-9]{2})?[0-9]{2}$")) {
+//            birthDateLayout.setError(getActivity().getResources().getString(R.string.str_validation_birthdate));
+//            return false;
+//        } else {
+//            birthDateLayout.setError(null);
+//            return true;
+//        }
+//    }
 
     //ref: https://stackoverflow.com/questions/8204680/java-regex-email
     private boolean checkEmail() {

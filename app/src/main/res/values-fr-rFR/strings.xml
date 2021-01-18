@@ -3,7 +3,7 @@
     <string name="txt_str_delete">Supprimer</string>
     <string name="txt_btn_str_gender">Choisissez le sexe</string>
     <string name="txt_str_gender">Sexe</string>
-    <string name="txt_str_birthdate">Date de naissance (jour/mois/année)</string>
+    <string name="txt_str_birthdate">Date de naissance</string>
     <string name="str_txt_pick">Choisir</string>
     <string name="str_txt_education">Choisissez l\'éducation</string>
     <string name="str_txt_classroom">Choisissez la classe</string>

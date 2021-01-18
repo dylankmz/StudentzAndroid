@@ -34,7 +34,7 @@ public class StudentViewModel extends AndroidViewModel {
 
 
     //sharedStudent om default waarden te kunnen hebben
-    public MutableLiveData<Student> getSharedStudent() {
+    public MutableLiveData<Student> getDefaultValues() {
         if (sharedStudent == null) {
             student = new Student();
             //ref: https://11zon.com/android/android_resource_values.php

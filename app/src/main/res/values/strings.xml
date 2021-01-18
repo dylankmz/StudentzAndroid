@@ -4,7 +4,7 @@
     <string name="txt_str_delete">Delete</string>
     <string name="txt_btn_str_gender">Pick gender</string>
     <string name="txt_str_gender">Gender</string>
-    <string name="txt_str_birthdate">Birth date (day/month/year)</string>
+    <string name="txt_str_birthdate">Birth date</string>
     <string name="str_txt_pick">Pick</string>
     <string name="str_txt_education">Pick education</string>
     <string name="str_txt_classroom">Choose classroom</string>

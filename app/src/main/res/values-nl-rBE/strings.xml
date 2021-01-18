@@ -3,7 +3,7 @@
     <string name="txt_str_delete">Verwijder</string>
     <string name="txt_btn_str_gender">Kies geslacht</string>
     <string name="txt_str_gender">Geslacht</string>
-    <string name="txt_str_birthdate">Geboortedatum (dag/maand/jaar)</string>
+    <string name="txt_str_birthdate">Geboortedatum</string>
     <string name="str_txt_pick">Kies</string>
     <string name="str_txt_education">Kies studierichting</string>
     <string name="str_txt_classroom">Kies klaslokaal</string>
