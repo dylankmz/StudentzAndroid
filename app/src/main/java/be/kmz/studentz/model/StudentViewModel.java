@@ -2,13 +2,13 @@ package be.kmz.studentz.model;
 
 import android.app.Application;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.preference.PreferenceManager;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import be.kmz.studentz.R;
@@ -63,18 +63,21 @@ public class StudentViewModel extends AndroidViewModel {
     }
 
     //getStudents met preferences, ik roep de juiste querys hiervoor, hulp van prof gekregen
+    //eerst deed ik dit met een switch, maar aangezien ik 3 talen gebruik in mijn app, werkte
+    //het niet meer met string values, met een if else zorg ik ervoor dat het dynamisch eendert
+    //welke taal het gefilterd kan worden. switch pakt geen res.GetString() in zijn cases
     public LiveData<List<Student>> getStudents() {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(myApp);
-        String choice = preferences.getString("pref_order", "Sort on education");
-        switch (choice) {
-            case "Sort on education": students = db.getStudentDAO().getAllStudentsByEducation();
-            break;
-            case "Sort on classroom": students = db.getStudentDAO().getAllStudentsByClassroom();
-            break;
-            case "Sort on last name(Alphabetical)": students = db.getStudentDAO().findAllStudentsByLastName();
-            break;
-            case "Sort on zip": students = db.getStudentDAO().findAllStudentsByZip();
-            break;
+        Resources res = getApplication().getResources();
+        String choice = preferences.getString("pref_order", res.getString(R.string.str_sort_education));
+        if (res.getString(R.string.str_sort_education).equals(choice)) {
+            students = db.getStudentDAO().getAllStudentsByEducation();
+        } else if (res.getString(R.string.str_sort_classroom).equals(choice)) {
+            students = db.getStudentDAO().getAllStudentsByClassroom();
+        } else if (res.getString(R.string.str_sort_lastname).equals(choice)) {
+            students = db.getStudentDAO().getAllStudentsByLastName();
+        } else if (res.getString(R.string.str_sort_zip).equals(choice)) {
+            students = db.getStudentDAO().getAllStudentsByZip();
         }
         return students;
     }

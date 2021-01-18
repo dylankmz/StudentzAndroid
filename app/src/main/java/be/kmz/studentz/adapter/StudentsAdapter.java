@@ -1,6 +1,7 @@
 package be.kmz.studentz.adapter;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
