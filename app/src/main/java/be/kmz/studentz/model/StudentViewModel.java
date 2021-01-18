@@ -69,7 +69,7 @@ public class StudentViewModel extends AndroidViewModel {
     public LiveData<List<Student>> getStudents() {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(myApp);
         Resources res = getApplication().getResources();
-        String choice = preferences.getString("pref_order", res.getString(R.string.str_sort_education));
+        String choice = preferences.getString(res.getString(R.string.pref_order_key), res.getString(R.string.str_sort_education));
         if (res.getString(R.string.str_sort_education).equals(choice)) {
             students = db.getStudentDAO().getAllStudentsByEducation();
         } else if (res.getString(R.string.str_sort_classroom).equals(choice)) {

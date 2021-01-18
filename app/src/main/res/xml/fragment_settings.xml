@@ -7,6 +7,6 @@
         android:layout_height="wrap_content"
         android:entries="@array/pref_order_list"
         android:entryValues="@array/pref_order_list"
-        android:key="pref_order"
+        android:key="@string/pref_order_key"
         android:title="@string/title_pref_order" />
 </PreferenceScreen>
