@@ -28,6 +28,8 @@ import be.kmz.studentz.R;
 import be.kmz.studentz.model.ehb.Ehb;
 import be.kmz.studentz.model.ehb.EhbModel;
 
+
+//mijn map werkt alleen op fysieke toestellen, op mijn virtuele device wilt het niet werken..
 public class ContactFragment extends Fragment implements OnMapReadyCallback {
 
     //fields dat ik nodig heb
