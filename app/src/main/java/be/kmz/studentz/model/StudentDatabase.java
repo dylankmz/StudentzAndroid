@@ -25,7 +25,7 @@ public abstract class StudentDatabase extends RoomDatabase {
 
     public static StudentDatabase getInstance(Context context) {
         if (instance == null) {
-            instance = Room.databaseBuilder(context, StudentDatabase.class, "students.sqlite").allowMainThreadQueries().build();
+            instance = Room.databaseBuilder(context, StudentDatabase.class, "students.sqlite").build();
         }
         return instance;
     }

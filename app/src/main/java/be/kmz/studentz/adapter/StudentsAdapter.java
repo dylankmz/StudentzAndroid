@@ -30,7 +30,6 @@ import be.kmz.studentz.model.StudentViewModel;
 public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.StudentViewHolder> implements Filterable {
 
     //adapter klasse is nodig voor onze data(bridge), het geeft toegang
-
     private FragmentActivity activity;
     private List<Student> allStudents;
     private List<Student> students;
