@@ -65,12 +65,9 @@ public class StudentListFragment extends Fragment {
 
         //alle studenten krijgen
         StudentViewModel model = new ViewModelProvider(mContext).get(StudentViewModel.class);
-        model.getStudents().observe(getViewLifecycleOwner(), new Observer<List<Student>>() {
-            @Override
-            public void onChanged(List<Student> students) {
-                studentsAdapter.addStudents(students);
-                studentsAdapter.notifyDataSetChanged();
-            }
+        model.getStudents().observe(getViewLifecycleOwner(), students -> {
+            studentsAdapter.addStudents(students);
+            studentsAdapter.notifyDataSetChanged();
         });
 
         //ref: https://abhiandroid.com/ui/searchview & NoteDroid V4 van Docent

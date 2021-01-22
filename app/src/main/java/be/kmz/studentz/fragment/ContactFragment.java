@@ -99,15 +99,12 @@ public class ContactFragment extends Fragment implements OnMapReadyCallback {
     //metohde om markers te maken
     private void createMarker() {
         EhbModel model = new ViewModelProvider(mContext).get(EhbModel.class);
-        model.getEhbCampusList().observe(getViewLifecycleOwner(), new Observer<ArrayList<Ehb>>() {
-            @Override
-            public void onChanged(ArrayList<Ehb> ehbSchools) {
-                for (Ehb currentCampus : ehbSchools) {
-                    mMap.addMarker(new MarkerOptions().position(currentCampus.getCoordinate())
-                            .title(currentCampus.getName())
-                            .snippet(currentCampus.getInfo())
-                            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
-                }
+        model.getEhbCampusList().observe(getViewLifecycleOwner(), ehbSchools -> {
+            for (Ehb currentCampus : ehbSchools) {
+                mMap.addMarker(new MarkerOptions().position(currentCampus.getCoordinate())
+                        .title(currentCampus.getName())
+                        .snippet(currentCampus.getInfo())
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
             }
         });
     }

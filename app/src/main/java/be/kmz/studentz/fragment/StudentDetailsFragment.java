@@ -81,6 +81,7 @@ public class StudentDetailsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_student_details, container, false);
 
         //ref NoteDroid V4, is nodig omd data te kunnen doorgeven van de geselecteerde student
+        //ternary operator
         selectedStudent = (getArguments() != null)?(Student) getArguments().getSerializable("passedStudent"):null;
 
         edFirstName = rootView.findViewById(R.id.txtFirstName);
@@ -120,18 +121,15 @@ public class StudentDetailsFragment extends Fragment {
 
         //StudentViewModel class wordt gebruikt om vanuit de sharedStudent methode data te koppelen
         StudentViewModel model = new ViewModelProvider(mContext).get(StudentViewModel.class);
-        model.getDefaultValues().observe(getViewLifecycleOwner(), new Observer<Student>() {
-                    @Override
-                    public void onChanged(Student student) {
-                        //als ik deze verificatie niet uitvoer zet hij de waarde van gender, education en classroom
-                        //op de default waarde van sharedStudent altijd
-                        if (selectedStudent == null){
-                            tvGender.setText(student.getGender());
-                            tvEducation.setText(student.getEducation());
-                            tvClassroom.setText(student.getClassroom());
-                        }
-                    }
-                });
+        model.getDefaultValues().observe(getViewLifecycleOwner(), student -> {
+            //als ik deze verificatie niet uitvoer zet hij de waarde van gender, education en classroom
+            //op de default waarde van sharedStudent altijd
+            if (selectedStudent == null){
+                tvGender.setText(student.getGender());
+                tvEducation.setText(student.getEducation());
+                tvClassroom.setText(student.getClassroom());
+            }
+        });
 
         if (selectedStudent != null) {
             edFirstName.setText(selectedStudent.getFirstName());
@@ -148,101 +146,78 @@ public class StudentDetailsFragment extends Fragment {
 
         //onclicklistener van mijn fab
         FloatingActionButton fab = rootView.findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                StudentViewModel model = new ViewModelProvider(mContext).get(StudentViewModel.class);
-                if (selectedStudent == null && checkFirstName() && checkLastName()
-                        && checkEmail() && checkAddress() && checkLocation() && checkZip()) {
-                    Student s = new Student(edFirstName.getText().toString(),
-                            edLastName.getText().toString(),
-                            tvGender.getText().toString(),
-                            edBirthDate.getText().toString(),
-                            tvEducation.getText().toString(),
-                            tvClassroom.getText().toString(),
-                            edEmail.getText().toString(),
-                            edAddress.getText().toString(),
-                            edLocation.getText().toString(),
-                            edZip.getText().toString());
-                    Toast.makeText(mContext, R.string.toast_student_added, Toast.LENGTH_LONG).show();
-                    model.insertStudent(s);
-                    mContext.getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, StudentListFragment.newInstance()).commit();
-                } else if (checkFirstName() && checkLastName()
-                        && checkEmail() && checkAddress() && checkLocation() && checkZip()){
-                    selectedStudent.setFirstName(edFirstName.getText().toString());
-                    selectedStudent.setLastName(edLastName.getText().toString());
-                    selectedStudent.setGender(tvGender.getText().toString());
-                    selectedStudent.setBirthDate(edBirthDate.getText().toString());
-                    selectedStudent.setEducation(tvEducation.getText().toString());
-                    selectedStudent.setClassroom(tvClassroom.getText().toString());
-                    selectedStudent.setEmail(edEmail.getText().toString());
-                    selectedStudent.setAddress(edAddress.getText().toString());
-                    selectedStudent.setLocation(edLocation.getText().toString());
-                    selectedStudent.setZip(edZip.getText().toString());
-                    model.updateStudent(selectedStudent);
-                    Toast.makeText(mContext, R.string.toast_student_updated, Toast.LENGTH_LONG).show();
-                    mContext.getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, StudentListFragment.newInstance()).commit();
-                }
+        fab.setOnClickListener(v -> {
+            StudentViewModel model1 = new ViewModelProvider(mContext).get(StudentViewModel.class);
+            if (selectedStudent == null && checkFirstName() && checkLastName()
+                    && checkEmail() && checkAddress() && checkLocation() && checkZip()) {
+                Student s = new Student(edFirstName.getText().toString(),
+                        edLastName.getText().toString(),
+                        tvGender.getText().toString(),
+                        edBirthDate.getText().toString(),
+                        tvEducation.getText().toString(),
+                        tvClassroom.getText().toString(),
+                        edEmail.getText().toString(),
+                        edAddress.getText().toString(),
+                        edLocation.getText().toString(),
+                        edZip.getText().toString());
+                Toast.makeText(mContext, R.string.toast_student_added, Toast.LENGTH_LONG).show();
+                model1.insertStudent(s);
+                mContext.getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, StudentListFragment.newInstance()).commit();
+            } else if (checkFirstName() && checkLastName()
+                    && checkEmail() && checkAddress() && checkLocation() && checkZip()){
+                selectedStudent.setFirstName(edFirstName.getText().toString());
+                selectedStudent.setLastName(edLastName.getText().toString());
+                selectedStudent.setGender(tvGender.getText().toString());
+                selectedStudent.setBirthDate(edBirthDate.getText().toString());
+                selectedStudent.setEducation(tvEducation.getText().toString());
+                selectedStudent.setClassroom(tvClassroom.getText().toString());
+                selectedStudent.setEmail(edEmail.getText().toString());
+                selectedStudent.setAddress(edAddress.getText().toString());
+                selectedStudent.setLocation(edLocation.getText().toString());
+                selectedStudent.setZip(edZip.getText().toString());
+                model1.updateStudent(selectedStudent);
+                Toast.makeText(mContext, R.string.toast_student_updated, Toast.LENGTH_LONG).show();
+                mContext.getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, StudentListFragment.newInstance()).commit();
             }
         });
 
 //        ref: https://www.youtube.com/watch?v=hwe1abDO2Ag
-        dateImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Calendar cal = Calendar.getInstance();
-                mDay = cal.get(Calendar.DAY_OF_MONTH);
-                mMonth = cal.get(Calendar.MONTH);
-                mYear = cal.get(Calendar.YEAR);
-                DatePickerDialog datePickerDialog = new DatePickerDialog(mContext, android.R.style.Theme_DeviceDefault_Dialog, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        month = month + 1;
-                        edBirthDate.setText(dayOfMonth + "/" + month + "/" +year);
-                    }
-                }, mYear, mMonth, mDay);
-                datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis()-1000);
-                datePickerDialog.show();
-            }
+        dateImage.setOnClickListener(v -> {
+            Calendar cal = Calendar.getInstance();
+            mDay = cal.get(Calendar.DAY_OF_MONTH);
+            mMonth = cal.get(Calendar.MONTH);
+            mYear = cal.get(Calendar.YEAR);
+            DatePickerDialog datePickerDialog = new DatePickerDialog(mContext, android.R.style.Theme_DeviceDefault_Dialog, (view, year, month, dayOfMonth) -> {
+                month = month + 1;
+                edBirthDate.setText(dayOfMonth + "/" + month + "/" +year);
+            }, mYear, mMonth, mDay);
+            datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis()-1000);
+            datePickerDialog.show();
         });
         return rootView;
     }
 
 
     //gender dialog
-    private View.OnClickListener openGenderDialogListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            GenderDialog genderDialog = new GenderDialog();
-            genderDialog.show(getParentFragmentManager(), "gd");
-        }
+    private View.OnClickListener openGenderDialogListener = v -> {
+        GenderDialog genderDialog = new GenderDialog();
+        genderDialog.show(getParentFragmentManager(), "gd");
     };
 
     //education dialog
-    private View.OnClickListener openEducationDialogListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            EducationDialog educationDialog = new EducationDialog();
-            educationDialog.show(getParentFragmentManager(), "ed");
-        }
+    private View.OnClickListener openEducationDialogListener = v -> {
+        EducationDialog educationDialog = new EducationDialog();
+        educationDialog.show(getParentFragmentManager(), "ed");
     };
 
     //class dialog
-    private View.OnClickListener openClassroomDialogListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            ClassroomDialog classroomDialog = new ClassroomDialog();
-            classroomDialog.show(getParentFragmentManager(), "cd");
-        }
+    private View.OnClickListener openClassroomDialogListener = v -> {
+        ClassroomDialog classroomDialog = new ClassroomDialog();
+        classroomDialog.show(getParentFragmentManager(), "cd");
     };
 
     //info dialog
-    private View.OnClickListener infoListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            new InfoDialog().show(getParentFragmentManager(), "infolst");
-        }
-    };
+    private View.OnClickListener infoListener = v -> new InfoDialog().show(getParentFragmentManager(), "infolst");
 
     //volgende methodes zijn validatie methodes voor mijn inputfields
     //ref voor regex: stackoverflow & https://regexlib.com/Search.aspx?k=street&AspxAutoDetectCookieSupport=1

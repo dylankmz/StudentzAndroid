@@ -82,33 +82,19 @@ public class StudentViewModel extends AndroidViewModel {
         return students;
     }
 
+    //runnables
     //insert
     public void insertStudent(Student s) {
-        StudentDatabase.databaseExecutor.execute(new Runnable() {
-            @Override
-            public void run() {
-                db.getStudentDAO().insertStudent(s);
-            }
-        });
+        StudentDatabase.databaseExecutor.execute(() -> db.getStudentDAO().insertStudent(s));
     }
 
     //update
     public void updateStudent(Student s){
-        StudentDatabase.databaseExecutor.execute(new Runnable() {
-            @Override
-            public void run() {
-                db.getStudentDAO().updateStudent(s);
-            }
-        });
+        StudentDatabase.databaseExecutor.execute(() -> db.getStudentDAO().updateStudent(s));
     }
 
     //delete
     public void deleteStudent(Student s){
-        StudentDatabase.databaseExecutor.execute(new Runnable() {
-            @Override
-            public void run() {
-                db.getStudentDAO().deleteStudent(s);
-            }
-        });
+        StudentDatabase.databaseExecutor.execute(() -> db.getStudentDAO().deleteStudent(s));
     }
 }
