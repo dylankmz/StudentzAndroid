@@ -1,6 +1,6 @@
 # StudentzAndroid
 
-Copyright [2021] [departement GDT Erasmushogeschool Brussel]
+Copyright [2021] [DYLANKMZ]
 
 
 Licensed under the Apache License, Version 2.0 (the "License");
